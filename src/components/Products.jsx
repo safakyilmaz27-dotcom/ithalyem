@@ -1,5 +1,5 @@
 import { FileDown, MessageCircle, MapPin, CheckCircle2 } from 'lucide-react'
-import { PRODUCTS, waLink } from '../config'
+import { CATEGORIES, productsByCategory, waLink } from '../config'
 
 function ProductCard({ p }) {
   return (
@@ -45,14 +45,16 @@ function ProductCard({ p }) {
 
         {/* Aksiyon butonları */}
         <div className="mt-6 flex flex-col gap-2.5">
-          <a
-            href={`/analiz/${p.id}.pdf`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-navy-800 px-4 py-2.5 text-sm font-semibold text-navy-800 transition hover:bg-navy-800 hover:text-white"
-          >
-            <FileDown size={17} /> Analiz Raporu İndir (PDF)
-          </a>
+          {!p.hideAnalysis && (
+            <a
+              href={`/analiz/${p.id}.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-navy-800 px-4 py-2.5 text-sm font-semibold text-navy-800 transition hover:bg-navy-800 hover:text-white"
+            >
+              <FileDown size={17} /> Analiz Raporu İndir (PDF)
+            </a>
+          )}
           <a
             href={waLink(`Merhaba, ${p.name} için fiyat ve teklif almak istiyorum.`)}
             target="_blank"
@@ -84,10 +86,31 @@ export default function Products() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {PRODUCTS.map((p) => (
-            <ProductCard key={p.id} p={p} />
-          ))}
+        <div className="mt-16 space-y-16">
+          {CATEGORIES.map((cat) => {
+            const items = productsByCategory(cat.id)
+            if (items.length === 0) return null
+            return (
+              <div key={cat.id}>
+                {/* Kategori başlığı */}
+                <div className="flex flex-col gap-1 border-b border-slate-200 pb-4 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <h3 className="text-2xl font-extrabold text-navy-800">{cat.title}</h3>
+                    <p className="mt-1 text-sm text-slate-600">{cat.description}</p>
+                  </div>
+                  <span className="text-sm font-semibold text-forest-700">
+                    {items.length} ürün
+                  </span>
+                </div>
+
+                <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                  {items.map((p) => (
+                    <ProductCard key={p.id} p={p} />
+                  ))}
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import { MapPinned, Building2, Tractor, Anchor } from 'lucide-react'
 
-const CITIES = ['Erzurum', 'Malatya', 'Elazığ', 'Iğdır', 'Kars', 'Van', 'Ağrı', 'Bingöl', 'Muş', 'Erzincan']
+const CITIES = ['Erzurum', 'Malatya', 'Elazığ', 'Iğdır', 'Kars', 'Van', 'Ağrı', 'Bingöl', 'Muş', 'Erzincan', 'Kayseri', 'Tokat', 'Diyarbakır']
 
 const TARGETS = [
   { icon: Building2, label: 'Yem Fabrikaları' },
@@ -48,7 +48,7 @@ export default function Logistics() {
           <div className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
             <h3 className="text-lg font-bold text-white">Hizmet Verdiğimiz İller</h3>
             <p className="mt-1 text-sm text-slate-300">
-              Doğu Anadolu genelinde aktif teslimat ağı
+              Doğu Anadolu ve çevre bölgelerde aktif teslimat ağı
             </p>
             <div className="mt-6 flex flex-wrap gap-2.5">
               {CITIES.map((c) => (

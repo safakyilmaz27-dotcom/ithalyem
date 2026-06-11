@@ -16,6 +16,7 @@ export const waLink = (message) =>
 export const PRODUCTS = [
   {
     id: 'kepek',
+    category: 'hayvan-yemleri',
     name: 'Kepek',
     tag: 'Ana Ürün',
     origin: 'Orta Asya',
@@ -31,6 +32,7 @@ export const PRODUCTS = [
   },
   {
     id: 'pamuk-kuspesi',
+    category: 'hayvan-yemleri',
     name: 'Pamuk Yağı Küspesi',
     tag: 'Yüksek Protein',
     origin: 'Orta Asya',
@@ -46,6 +48,7 @@ export const PRODUCTS = [
   },
   {
     id: 'atk-36',
+    category: 'hayvan-yemleri',
     name: 'ATK 36 (Ayçiçeği Tohumu Küspesi)',
     tag: 'Yüksek Protein',
     origin: 'Orta Asya',
@@ -61,6 +64,7 @@ export const PRODUCTS = [
   },
   {
     id: 'ddgs',
+    category: 'hayvan-yemleri',
     name: 'DDGS',
     tag: 'Enerji & Protein',
     origin: 'İthal',
@@ -74,4 +78,58 @@ export const PRODUCTS = [
     ],
     highlight: 'Enerji ve protein deposu ithal ham madde',
   },
+  {
+    id: 'findik-kabugu',
+    category: 'kabuk-urunleri',
+    name: 'Fındık Kabuğu',
+    tag: 'Doğal Yan Ürün',
+    origin: 'Türkiye',
+    hideAnalysis: true,
+    summary:
+      'Kurutulmuş fındık kabuğu — biyokütle yakıt, organik gübre ve hayvan altlığı uygulamaları için doğal yerli yan ürün. Toplu tedarik imkânı.',
+    badge: { label: 'Menşei', value: 'Yerli' },
+    specs: [
+      { label: 'Form', value: 'Kuru, Doğal' },
+      { label: 'Menşei', value: 'Türkiye' },
+      { label: 'Kullanım', value: 'Biyokütle & Altlık' },
+    ],
+    highlight: 'Biyokütle ve altlık için doğal yerli kaynak',
+  },
+  {
+    id: 'nar-kabugu',
+    category: 'kabuk-urunleri',
+    name: 'Kurutulmuş Nar Kabuğu',
+    tag: 'Doğal Yan Ürün',
+    origin: 'Türkiye',
+    hideAnalysis: true,
+    summary:
+      'Doğal yöntemlerle kurutulmuş nar kabuğu — ekstrakt, bitkisel ürün ve yem katkı sektörü için değerli ham madde. İstenen miktarda tedarik.',
+    badge: { label: 'Form', value: 'Kuru' },
+    specs: [
+      { label: 'Form', value: 'Kurutulmuş' },
+      { label: 'Menşei', value: 'Türkiye' },
+      { label: 'Kullanım', value: 'Ekstrakt & Yem Katkı' },
+    ],
+    highlight: 'Ekstrakt ve katkı sektörü için kurutulmuş ham madde',
+  },
 ]
+
+// Ürünler iki ana kategoride gruplanır: hayvan yemleri ve doğal kabuk ürünleri.
+export const CATEGORIES = [
+  {
+    id: 'hayvan-yemleri',
+    title: 'Hayvan Yemleri',
+    description:
+      'Orta Asya menşeli, yüksek analiz değerli ithal yem ham maddeleri.',
+  },
+  {
+    id: 'kabuk-urunleri',
+    title: 'Fındık & Nar Kabuğu',
+    description:
+      'Doğal yöntemlerle kurutulmuş yerli kabuk ürünleri — biyokütle ve katkı sektörü için.',
+  },
+]
+
+// Bir kategoriye ait ürünleri döndürür.
+export const productsByCategory = (categoryId) =>
+  PRODUCTS.filter((p) => p.category === categoryId)
