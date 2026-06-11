@@ -1,135 +1,51 @@
-// Site geneli iletişim ve marka bilgileri — tek yerden yönetilir.
+// Site geneli, dilden bağımsız teknik/iletişim bilgileri.
+// Tüm kullanıcıya görünen metinler src/i18n/content/{tr,en,ar}.js içindedir.
 export const SITE = {
   name: 'İthalyem.com',
-  slogan: "Orta Asya'dan Türkiye'ye Güvenilir Yem Ham Maddesi Tedariki",
+  url: 'https://ithalyem.com',
   phoneDisplay: '0545 133 28 59',
   phoneRaw: '+905451332859',
   whatsapp: '905451332859',
   email: 'info@ithalyem.com',
-  region: 'Doğu Anadolu Bölgesi',
+}
+
+// Teklif formu gönderim ayarları.
+// formspreeId doldurulursa form Formspree üzerinden gönderilir; boş ise mailto fallback kullanılır.
+export const QUOTE = {
+  formspreeId: '', // örn: 'xmyzabcd' → https://formspree.io/f/xmyzabcd
+  mailto: 'info@ithalyem.com',
 }
 
 // WhatsApp linki, opsiyonel ön tanımlı mesaj ile.
 export const waLink = (message) =>
   `https://wa.me/${SITE.whatsapp}${message ? `?text=${encodeURIComponent(message)}` : ''}`
 
-export const PRODUCTS = [
-  {
-    id: 'kepek',
-    category: 'hayvan-yemleri',
-    name: 'Kepek',
-    tag: 'Ana Ürün',
-    origin: 'Orta Asya',
-    summary:
-      'Yüksek besleyici değere sahip, Orta Asya menşeli ithal kepek. Piyasa ortalamasının üzerinde nişasta oranıyla yem rasyonlarında enerji kaynağı.',
-    badge: { label: 'Nişasta', value: '%32' },
-    specs: [
-      { label: 'Nişasta Oranı', value: '%32' },
-      { label: 'Menşei', value: 'Orta Asya' },
-      { label: 'Kullanım', value: 'Büyükbaş & Yem Fabrikası' },
-    ],
-    highlight: 'Piyasa ortalamasının üzerinde %32 nişasta oranı',
-  },
-  {
-    id: 'pamuk-kuspesi',
-    category: 'hayvan-yemleri',
-    name: 'Pamuk Yağı Küspesi',
-    tag: 'Yüksek Protein',
-    origin: 'Orta Asya',
-    summary:
-      'Yüksek protein içeriğiyle özellikle Doğu Anadolu’daki besiciler ve yem fabrikaları için ideal protein kaynağı.',
-    badge: { label: 'Protein', value: '%22.80' },
-    specs: [
-      { label: 'Protein Oranı', value: '%22.80' },
-      { label: 'Menşei', value: 'Orta Asya' },
-      { label: 'Kullanım', value: 'Besi & Süt Hayvancılığı' },
-    ],
-    highlight: 'Besiciler için ideal %22.80 protein oranı',
-  },
-  {
-    id: 'atk-36',
-    category: 'hayvan-yemleri',
-    name: 'ATK 36 (Ayçiçeği Tohumu Küspesi)',
-    tag: 'Yüksek Protein',
-    origin: 'Orta Asya',
-    summary:
-      'Yüksek proteinli ayçiçeği tohumu küspesi. Yem rasyonlarında dengeli protein takviyesi için tercih edilen ham madde.',
-    badge: { label: 'Protein', value: '%36' },
-    specs: [
-      { label: 'Protein Oranı', value: '%36' },
-      { label: 'Menşei', value: 'Orta Asya' },
-      { label: 'Kullanım', value: 'Yem Rasyonu Protein Takviyesi' },
-    ],
-    highlight: 'Yüksek %36 protein oranı',
-  },
-  {
-    id: 'ddgs',
-    category: 'hayvan-yemleri',
-    name: 'DDGS',
-    tag: 'Enerji & Protein',
-    origin: 'İthal',
-    summary:
-      'Kurutulmuş Damıtık Tahıl ve Çözünürleri (DDGS) — hem enerji hem protein deposu ithal ham madde. Yüksek verimli rasyonların vazgeçilmezi.',
-    badge: { label: 'Enerji + Protein', value: 'Deposu' },
-    specs: [
-      { label: 'İçerik', value: 'Enerji + Protein' },
-      { label: 'Menşei', value: 'İthal' },
-      { label: 'Kullanım', value: 'Yüksek Verimli Rasyon' },
-    ],
-    highlight: 'Enerji ve protein deposu ithal ham madde',
-  },
-  {
-    id: 'findik-kabugu',
-    category: 'kabuk-urunleri',
-    name: 'Fındık Kabuğu',
-    tag: 'Doğal Yan Ürün',
-    origin: 'Türkiye',
-    hideAnalysis: true,
-    summary:
-      'Kurutulmuş fındık kabuğu — biyokütle yakıt, organik gübre ve hayvan altlığı uygulamaları için doğal yerli yan ürün. Toplu tedarik imkânı.',
-    badge: { label: 'Menşei', value: 'Yerli' },
-    specs: [
-      { label: 'Form', value: 'Kuru, Doğal' },
-      { label: 'Menşei', value: 'Türkiye' },
-      { label: 'Kullanım', value: 'Biyokütle & Altlık' },
-    ],
-    highlight: 'Biyokütle ve altlık için doğal yerli kaynak',
-  },
-  {
-    id: 'nar-kabugu',
-    category: 'kabuk-urunleri',
-    name: 'Kurutulmuş Nar Kabuğu',
-    tag: 'Doğal Yan Ürün',
-    origin: 'Türkiye',
-    hideAnalysis: true,
-    summary:
-      'Doğal yöntemlerle kurutulmuş nar kabuğu — ekstrakt, bitkisel ürün ve yem katkı sektörü için değerli ham madde. İstenen miktarda tedarik.',
-    badge: { label: 'Form', value: 'Kuru' },
-    specs: [
-      { label: 'Form', value: 'Kurutulmuş' },
-      { label: 'Menşei', value: 'Türkiye' },
-      { label: 'Kullanım', value: 'Ekstrakt & Yem Katkı' },
-    ],
-    highlight: 'Ekstrakt ve katkı sektörü için kurutulmuş ham madde',
-  },
+// Ürünlerin dilden bağımsız meta verisi. Metinler (ad, özet, analiz vb.)
+// content sözlüklerinde products.items[id] altında tutulur.
+export const PRODUCT_META = [
+  { id: 'kepek', slug: 'bugday-kepegi', category: 'hayvan-yemleri', hideAnalysis: false },
+  { id: 'pamuk-kuspesi', slug: 'pamuk-yagi-kuspesi', category: 'hayvan-yemleri', hideAnalysis: false },
+  { id: 'atk-36', slug: 'atk-36', category: 'hayvan-yemleri', hideAnalysis: false },
+  { id: 'ddgs', slug: 'ddgs', category: 'hayvan-yemleri', hideAnalysis: false },
+  { id: 'findik-kabugu', slug: 'findik-kabugu', category: 'kabuk-urunleri', hideAnalysis: true },
+  { id: 'nar-kabugu', slug: 'nar-kabugu', category: 'kabuk-urunleri', hideAnalysis: true },
 ]
 
-// Ürünler iki ana kategoride gruplanır: hayvan yemleri ve doğal kabuk ürünleri.
-export const CATEGORIES = [
-  {
-    id: 'hayvan-yemleri',
-    title: 'Hayvan Yemleri',
-    description:
-      'Orta Asya menşeli, yüksek analiz değerli ithal yem ham maddeleri.',
-  },
-  {
-    id: 'kabuk-urunleri',
-    title: 'Fındık & Nar Kabuğu',
-    description:
-      'Doğal yöntemlerle kurutulmuş yerli kabuk ürünleri — biyokütle ve katkı sektörü için.',
-  },
+// Kategori sırası (başlık/açıklama content'te).
+export const CATEGORY_IDS = ['hayvan-yemleri', 'kabuk-urunleri']
+
+// Lojistikte hizmet verilen il anahtarları (isimler content.cities.names'te).
+export const SERVICE_CITY_KEYS = [
+  'erzurum', 'malatya', 'elazig', 'igdir', 'kars', 'van', 'agri',
+  'bingol', 'mus', 'erzincan', 'kayseri', 'tokat', 'diyarbakir',
 ]
 
-// Bir kategoriye ait ürünleri döndürür.
-export const productsByCategory = (categoryId) =>
-  PRODUCTS.filter((p) => p.category === categoryId)
+export const metaBySlug = (slug) => PRODUCT_META.find((p) => p.slug === slug)
+export const metasByCategory = (categoryId) =>
+  PRODUCT_META.filter((p) => p.category === categoryId)
+
+// Blog yazılarının gösterim sırası (içerik content.blog.posts[slug] altında).
+export const BLOG_SLUGS = ['kepek-nisasta-32', 'hopa-lojistik', 'kuspe-vs-atk']
+
+// Dil koduna karşılık gelen Intl locale.
+export const INTL_LOCALE = { tr: 'tr-TR', en: 'en-US', ar: 'ar' }

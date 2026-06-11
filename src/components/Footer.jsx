@@ -1,7 +1,11 @@
+import { Link } from 'react-router-dom'
 import { Wheat, Phone, Mail, MapPin } from 'lucide-react'
-import { SITE, PRODUCTS, waLink } from '../config'
+import { SITE, PRODUCT_META, waLink } from '../config'
+import { useLang } from '../i18n/LanguageContext'
 
 export default function Footer() {
+  const { c } = useLang()
+  const f = c.footer
   const year = new Date().getFullYear()
 
   return (
@@ -18,16 +22,18 @@ export default function Footer() {
                 İthalyem<span className="text-gold-400">.com</span>
               </span>
             </div>
-            <p className="mt-4 text-sm leading-relaxed">{SITE.slogan}</p>
+            <p className="mt-4 text-sm leading-relaxed">{f.slogan}</p>
           </div>
 
           {/* Ürünler */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-white">Ürünler</h3>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-white">{f.productsTitle}</h3>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {PRODUCTS.map((p) => (
-                <li key={p.id}>
-                  <a href="#urunler" className="transition hover:text-gold-400">{p.name}</a>
+              {PRODUCT_META.map((meta) => (
+                <li key={meta.id}>
+                  <Link to={`/urunler/${meta.slug}`} className="transition hover:text-gold-400">
+                    {c.products.items[meta.id].name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -35,14 +41,15 @@ export default function Footer() {
 
           {/* Kurumsal */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-white">Kurumsal</h3>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-white">{f.corporateTitle}</h3>
             <ul className="mt-4 space-y-2.5 text-sm">
-              <li><a href="#avantajlar" className="transition hover:text-gold-400">Neden İthal Yem?</a></li>
-              <li><a href="#lojistik" className="transition hover:text-gold-400">Lojistik &amp; Teslimat</a></li>
-              <li><a href="#iletisim" className="transition hover:text-gold-400">Teklif &amp; İletişim</a></li>
+              <li><Link to="/#avantajlar" className="transition hover:text-gold-400">{f.links.whyUs}</Link></li>
+              <li><Link to="/#lojistik" className="transition hover:text-gold-400">{f.links.logistics}</Link></li>
+              <li><Link to="/blog" className="transition hover:text-gold-400">{f.links.blog}</Link></li>
+              <li><Link to="/teklif" className="transition hover:text-gold-400">{f.links.quote}</Link></li>
               <li>
-                <a href={waLink('Merhaba, bilgi almak istiyorum.')} target="_blank" rel="noopener noreferrer" className="transition hover:text-gold-400">
-                  WhatsApp Hattı
+                <a href={waLink(f.wa)} target="_blank" rel="noopener noreferrer" className="transition hover:text-gold-400">
+                  {c.nav.whatsapp}
                 </a>
               </li>
             </ul>
@@ -50,7 +57,7 @@ export default function Footer() {
 
           {/* İletişim */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-white">İletişim</h3>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-white">{f.contactTitle}</h3>
             <ul className="mt-4 space-y-3 text-sm">
               <li className="flex items-center gap-2.5">
                 <Phone size={16} className="text-gold-400" />
@@ -62,7 +69,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin size={16} className="mt-0.5 shrink-0 text-gold-400" />
-                <span>{SITE.region}, Türkiye</span>
+                <span>{f.region}</span>
               </li>
             </ul>
           </div>
@@ -70,20 +77,12 @@ export default function Footer() {
 
         {/* SEO odaklı metin bloğu */}
         <div className="mt-12 border-t border-white/10 pt-8">
-          <p className="text-sm leading-relaxed text-slate-400">
-            <strong className="text-slate-300">İthalyem.com</strong> — Doğu Anadolu ithal
-            kepek, %32 nişastalı kepek fiyatları, Erzurum pamuk yağı küspesi, %22.80
-            proteinli küspe tedariki, ATK 36 ve DDGS ithalatı alanında B2B ve toplu satış
-            çözümleri sunar. Orta Asya menşeli yüksek analiz değerli yem ham maddeleri ile
-            Erzurum, Malatya, Elazığ, Iğdır, Kars ve Van başta olmak üzere tüm Doğu Anadolu
-            bölgesindeki yem fabrikaları, entegre tesisler ve büyük çiftliklere doğrudan
-            liman ve depo teslim seçenekleriyle hizmet veriyoruz.
-          </p>
+          <p className="text-sm leading-relaxed text-slate-400">{f.seo}</p>
         </div>
 
         <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-sm sm:flex-row">
-          <span>© {year} İthalyem.com — Tüm hakları saklıdır.</span>
-          <span className="text-slate-500">{SITE.slogan}</span>
+          <span>© {year} İthalyem.com — {f.rights}</span>
+          <span className="text-slate-500">{f.slogan}</span>
         </div>
       </div>
     </footer>

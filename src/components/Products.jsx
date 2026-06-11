@@ -1,7 +1,9 @@
-import { FileDown, MessageCircle, MapPin, CheckCircle2 } from 'lucide-react'
-import { CATEGORIES, productsByCategory, waLink } from '../config'
+import { Link } from 'react-router-dom'
+import { ArrowRight, MessageCircle, MapPin, CheckCircle2 } from 'lucide-react'
+import { CATEGORY_IDS, metasByCategory, waLink } from '../config'
+import { useLang } from '../i18n/LanguageContext'
 
-function ProductCard({ p }) {
+function ProductCard({ meta, p, labels }) {
   return (
     <article className="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-xl">
       {/* Üst başlık şeridi */}
@@ -9,13 +11,17 @@ function ProductCard({ p }) {
         <span className="inline-block rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white">
           {p.tag}
         </span>
-        <h3 className="mt-3 text-xl font-bold leading-snug text-white">{p.name}</h3>
+        <h3 className="mt-3 text-xl font-bold leading-snug text-white">
+          <Link to={`/urunler/${meta.slug}`} className="transition hover:text-gold-400">
+            {p.name}
+          </Link>
+        </h3>
         <div className="mt-1 flex items-center gap-1.5 text-sm text-slate-200">
-          <MapPin size={14} /> Menşei: {p.origin}
+          <MapPin size={14} /> {labels.menseiLabel}: {p.origin}
         </div>
 
         {/* Analiz rozeti */}
-        <div className="absolute right-5 top-5 flex flex-col items-center rounded-xl bg-gold-500 px-3 py-2 text-navy-900 shadow-lg">
+        <div className="absolute end-5 top-5 flex flex-col items-center rounded-xl bg-gold-500 px-3 py-2 text-navy-900 shadow-lg">
           <span className="text-lg font-extrabold leading-none">{p.badge.value}</span>
           <span className="text-[10px] font-semibold uppercase tracking-wide">
             {p.badge.label}
@@ -45,23 +51,19 @@ function ProductCard({ p }) {
 
         {/* Aksiyon butonları */}
         <div className="mt-6 flex flex-col gap-2.5">
-          {!p.hideAnalysis && (
-            <a
-              href={`/analiz/${p.id}.pdf`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-navy-800 px-4 py-2.5 text-sm font-semibold text-navy-800 transition hover:bg-navy-800 hover:text-white"
-            >
-              <FileDown size={17} /> Analiz Raporu İndir (PDF)
-            </a>
-          )}
+          <Link
+            to={`/urunler/${meta.slug}`}
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-navy-800 px-4 py-2.5 text-sm font-semibold text-navy-800 transition hover:bg-navy-800 hover:text-white"
+          >
+            {labels.detailBtn} <ArrowRight size={16} className="rtl:rotate-180" />
+          </Link>
           <a
-            href={waLink(`Merhaba, ${p.name} için fiyat ve teklif almak istiyorum.`)}
+            href={waLink(labels.waProduct(p.name))}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-green-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-green-700"
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-green-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-green-700"
           >
-            <MessageCircle size={17} /> Fiyat / Teklif Al
+            <MessageCircle size={17} /> {labels.quoteBtn}
           </a>
         </div>
       </div>
@@ -70,28 +72,33 @@ function ProductCard({ p }) {
 }
 
 export default function Products() {
+  const { c } = useLang()
+  const pr = c.products
+  const labels = {
+    menseiLabel: pr.menseiLabel,
+    detailBtn: pr.detailBtn,
+    quoteBtn: pr.quoteBtn,
+    waProduct: c.productDetail.wa,
+  }
+
   return (
     <section id="urunler" className="bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-bold uppercase tracking-wider text-forest-700">
-            Ürünlerimiz
+            {pr.eyebrow}
           </span>
-          <h2 className="mt-3 text-3xl font-extrabold text-navy-800 sm:text-4xl">
-            Güncel Stok &amp; Analiz Değerleri
-          </h2>
-          <p className="mt-4 text-lg text-slate-600">
-            Orta Asya menşeli, yüksek analiz değerli ithal yem ham maddeleri. Fiyat ve
-            teklif için doğrudan iletişime geçin.
-          </p>
+          <h2 className="mt-3 text-3xl font-extrabold text-navy-800 sm:text-4xl">{pr.title}</h2>
+          <p className="mt-4 text-lg text-slate-600">{pr.desc}</p>
         </div>
 
         <div className="mt-16 space-y-16">
-          {CATEGORIES.map((cat) => {
-            const items = productsByCategory(cat.id)
+          {CATEGORY_IDS.map((catId) => {
+            const items = metasByCategory(catId)
             if (items.length === 0) return null
+            const cat = pr.categories[catId]
             return (
-              <div key={cat.id}>
+              <div key={catId}>
                 {/* Kategori başlığı */}
                 <div className="flex flex-col gap-1 border-b border-slate-200 pb-4 sm:flex-row sm:items-end sm:justify-between">
                   <div>
@@ -99,13 +106,18 @@ export default function Products() {
                     <p className="mt-1 text-sm text-slate-600">{cat.description}</p>
                   </div>
                   <span className="text-sm font-semibold text-forest-700">
-                    {items.length} ürün
+                    {items.length} {pr.countSuffix}
                   </span>
                 </div>
 
                 <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                  {items.map((p) => (
-                    <ProductCard key={p.id} p={p} />
+                  {items.map((meta) => (
+                    <ProductCard
+                      key={meta.id}
+                      meta={meta}
+                      p={pr.items[meta.id]}
+                      labels={labels}
+                    />
                   ))}
                 </div>
               </div>

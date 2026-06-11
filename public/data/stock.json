@@ -1,0 +1,9 @@
+{
+  "tarih": { "tr": "9 Haziran 2026", "en": "June 9, 2026", "ar": "9 يونيو 2026" },
+  "durumlar": [
+    { "id": "kepek", "regions": ["erzurum", "igdir"], "teslim": "depo-liman", "durum": "stokta" },
+    { "id": "pamuk-kuspesi", "regions": ["malatya", "gaziantep"], "teslim": "depo", "durum": "stokta" },
+    { "id": "atk-36", "regions": ["elazig", "mardin"], "teslim": "depo", "durum": "sinirli" },
+    { "id": "ddgs", "regions": ["erzurum"], "teslim": "liman", "durum": "yolda" }
+  ]
+}
