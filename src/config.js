@@ -45,7 +45,14 @@ export const metasByCategory = (categoryId) =>
   PRODUCT_META.filter((p) => p.category === categoryId)
 
 // Blog yazılarının gösterim sırası (içerik content.blog.posts[slug] altında).
-export const BLOG_SLUGS = ['kepek-nisasta-32', 'hopa-lojistik', 'kuspe-vs-atk']
+export const BLOG_SLUGS = [
+  'yuksek-nisastali-ithal-kepek',
+  'ithal-bugday-kepegi-nedir',
+  'pamuk-yagi-kuspesi-nedir',
+  'kepek-nisasta-32',
+  'hopa-lojistik',
+  'kuspe-vs-atk',
+]
 
 // Dil koduna karşılık gelen Intl locale.
 export const INTL_LOCALE = { tr: 'tr-TR', en: 'en-US', ar: 'ar' }
