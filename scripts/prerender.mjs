@@ -83,7 +83,9 @@ const template = readFileSync(resolve(distDir, 'index.html'), 'utf8')
 // Her etiket "/>" veya ">" ile bittiği ve değerleri bunu içermediği için
 // non-greedy eşleşme güvenli.
 function applyMeta(html, { path, title, description }) {
-  const url = `${SITE.url}${path}`
+  // Seo.jsx ile aynı normalize: nihai (slash'lı) URL ile eşleş.
+  const normPath = path === '/' ? path : path.replace(/\/?$/, '/')
+  const url = `${SITE.url}${normPath}`
   return html
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${text(title)}</title>`)
     .replace(

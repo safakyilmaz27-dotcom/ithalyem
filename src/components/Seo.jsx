@@ -4,7 +4,10 @@ import { SITE } from '../config'
 // Her sayfa için <title>, <meta description>, <canonical>, Open Graph ve
 // opsiyonel JSON-LD structured data'yı dinamik olarak set eder.
 export default function Seo({ title, description, path = '/', jsonLd, image }) {
-  const url = `${SITE.url}${path}`
+  // GitHub Pages, dizin tabanlı sayfaları sondaki slash'a 301 yönlendirir.
+  // Canonical/OG URL'leri nihai (slash'lı) URL ile eşleşsin diye normalize et.
+  const normPath = path === '/' ? path : path.replace(/\/?$/, '/')
+  const url = `${SITE.url}${normPath}`
   const fullTitle = title ? `${title} | ${SITE.name}` : SITE.name
 
   return (
