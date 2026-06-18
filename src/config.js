@@ -46,6 +46,16 @@ export const metasByCategory = (categoryId) =>
 
 // Blog yazılarının gösterim sırası (içerik content.blog.posts[slug] altında).
 export const BLOG_SLUGS = [
+  'ithal-kepek-verimlilik-ekonomik-cozumler',
+  'ithal-kepek-nedir-hayvan-beslemede-onemi',
+  'dogru-kepek-tedarikcisi-secimi',
+  'dogu-anadolu-yem-sektoru',
+  'erzurum-kepek-fiyati-analizi',
+  'kalin-kepek-ince-kepek-farklari',
+  'ithal-kepek-besin-degerleri',
+  'hammadde-ithalat-kalite-kontrol',
+  'yem-maliyetlerini-dusurme-stratejileri',
+  'gelecegin-hayvanciligi-surdurulebilir-yem',
   'yuksek-nisastali-ithal-kepek',
   'ithal-bugday-kepegi-nedir',
   'pamuk-yagi-kuspesi-nedir',
