@@ -46,6 +46,7 @@ export const metasByCategory = (categoryId) =>
 
 // Blog yazılarının gösterim sırası (içerik content.blog.posts[slug] altında).
 export const BLOG_SLUGS = [
+  'toptan-kepek-satis-rehberi',
   'toptan-kepek-yem-ham-maddesi-rehberi',
   'ithal-kepek-verimlilik-ekonomik-cozumler',
   'ithal-kepek-nedir-hayvan-beslemede-onemi',
