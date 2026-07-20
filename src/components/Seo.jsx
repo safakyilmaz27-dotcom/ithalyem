@@ -9,6 +9,8 @@ export default function Seo({ title, description, path = '/', jsonLd, image }) {
   const normPath = path === '/' ? path : path.replace(/\/?$/, '/')
   const url = `${SITE.url}${normPath}`
   const fullTitle = title ? `${title} | ${SITE.name}` : SITE.name
+  // Sayfa kendi görselini vermezse site geneli varsayılan OG görselini kullan.
+  const ogImage = image || SITE.ogImage
 
   return (
     <Helmet>
@@ -22,7 +24,12 @@ export default function Seo({ title, description, path = '/', jsonLd, image }) {
       <meta property="og:title" content={fullTitle} />
       {description && <meta property="og:description" content={description} />}
       <meta property="og:url" content={url} />
-      {image && <meta property="og:image" content={image} />}
+      {ogImage && <meta property="og:image" content={ogImage} />}
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={fullTitle} />
+      {description && <meta name="twitter:description" content={description} />}
+      {ogImage && <meta name="twitter:image" content={ogImage} />}
 
       {jsonLd && (
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>

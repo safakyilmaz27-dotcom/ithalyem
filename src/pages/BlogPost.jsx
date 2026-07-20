@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
-import { ArrowLeft, CalendarDays, Clock } from 'lucide-react'
+import { ArrowLeft, CalendarDays, Clock, Phone } from 'lucide-react'
 import Seo from '../components/Seo'
 import { INTL_LOCALE, SITE } from '../config'
 import { useLang } from '../i18n/LanguageContext'
@@ -34,11 +34,17 @@ export default function BlogPost() {
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.excerpt,
+    image: SITE.ogImage,
     datePublished: post.date,
+    dateModified: post.updated || post.date,
     inLanguage: lang,
-    author: { '@type': 'Organization', name: SITE.name },
-    publisher: { '@type': 'Organization', name: SITE.name },
-    mainEntityOfPage: `${SITE.url}/blog/${slug}`,
+    author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE.name,
+      logo: { '@type': 'ImageObject', url: SITE.ogImage },
+    },
+    mainEntityOfPage: `${SITE.url}/blog/${slug}/`,
   }
 
   return (
@@ -61,6 +67,14 @@ export default function BlogPost() {
             <span className="inline-flex items-center gap-1.5">
               <Clock size={15} /> {post.readMin} {b.minRead}
             </span>
+            {slug === 'toptan-kepek-alim-rehberi' && (
+              <a
+                href={`tel:${SITE.phoneRaw}`}
+                className="inline-flex items-center gap-1.5 font-semibold text-white hover:underline"
+              >
+                <Phone size={15} /> {SITE.phoneDisplay}
+              </a>
+            )}
           </div>
         </div>
       </header>

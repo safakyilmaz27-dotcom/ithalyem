@@ -7,6 +7,8 @@ export const SITE = {
   phoneRaw: '+905451332859',
   whatsapp: '905451332859',
   email: 'info@ithalyem.com',
+  // Sosyal paylaşım / Open Graph varsayılan görseli (public/og-cover.png).
+  ogImage: 'https://ithalyem.com/og-cover.png',
 }
 
 // Teklif formu gönderim ayarları.

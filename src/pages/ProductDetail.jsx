@@ -40,20 +40,23 @@ export default function ProductDetail() {
 
   const documents = meta.hideAnalysis ? d.documentsShell : d.documents
 
+  // Not: Product/Offer schema'sı, Google'ın zorunlu tuttuğu `price` ve gerçek
+  // `review`/`aggregateRating` alanlarını gerektirir. Fiyatlandırma teklif
+  // usulü (herkese açık sabit fiyat yok) ve gerçek yorum bulunmadığından,
+  // sahte veri üretmeden geçerli kalan BreadcrumbList schema'sı kullanıyoruz.
+  // Böylece Search Console'daki "geçersiz Product" hataları ortadan kalkar.
   const productJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: p.name,
-    description: p.summary,
-    category: 'Yem Ham Maddesi',
-    brand: { '@type': 'Brand', name: SITE.name },
-    url: `${SITE.url}/urunler/${meta.slug}`,
-    offers: {
-      '@type': 'Offer',
-      availability: 'https://schema.org/InStock',
-      priceCurrency: 'TRY',
-      seller: { '@type': 'Organization', name: SITE.name },
-    },
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: SITE.name, item: `${SITE.url}/` },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: p.name,
+        item: `${SITE.url}/urunler/${meta.slug}/`,
+      },
+    ],
   }
 
   return (
