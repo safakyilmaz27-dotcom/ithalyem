@@ -8,7 +8,10 @@ export default function Seo({ title, description, path = '/', jsonLd, image }) {
   // Canonical/OG URL'leri nihai (slash'lı) URL ile eşleşsin diye normalize et.
   const normPath = path === '/' ? path : path.replace(/\/?$/, '/')
   const url = `${SITE.url}${normPath}`
-  const fullTitle = title ? `${title} | ${SITE.name}` : SITE.name
+  // Google SERP'te ~60 karakterden sonrası kırpılır. Site adı ekiyle bu sınırı
+  // aşan başlıklarda eki düşürüp sayfanın kendi başlığını tam göstermeyi seçiyoruz.
+  const withSuffix = title ? `${title} | ${SITE.name}` : SITE.name
+  const fullTitle = withSuffix.length <= 60 ? withSuffix : title || SITE.name
   // Sayfa kendi görselini vermezse site geneli varsayılan OG görselini kullan.
   const ogImage = image || SITE.ogImage
 

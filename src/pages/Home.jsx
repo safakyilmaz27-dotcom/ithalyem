@@ -13,25 +13,21 @@ import { useLang } from '../i18n/LanguageContext'
 export default function Home() {
   const { c } = useLang()
 
-  const orgJsonLd = {
+  // Organization schema'sı index.html'de site geneli olarak zaten yayınlanıyor.
+  // Burada onu tekrarlamak yerine ana sayfaya özgü WebSite düğümünü veriyoruz.
+  const homeJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': 'WebSite',
     name: SITE.name,
     url: SITE.url,
     description: c.seo.home.desc,
-    areaServed: 'Doğu Anadolu Bölgesi, Türkiye',
-    email: SITE.email,
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: SITE.phoneRaw,
-      contactType: 'sales',
-      availableLanguage: ['Turkish', 'English', 'Arabic'],
-    },
+    inLanguage: ['tr', 'en', 'ar'],
+    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
   }
 
   return (
     <>
-      <Seo title={c.seo.home.title} description={c.seo.home.desc} path="/" jsonLd={orgJsonLd} />
+      <Seo title={c.seo.home.title} description={c.seo.home.desc} path="/" jsonLd={homeJsonLd} />
       <Hero />
       <Advantages />
       <Products />

@@ -18,15 +18,20 @@ const STORAGE_KEY = 'ithalyem_lang'
 const LanguageCtx = createContext(null)
 
 export function LanguageProvider({ children }) {
-  const [lang, setLangState] = useState(() => {
+  // Build sırasında (prerender) ve ilk client render'da her zaman 'tr' ile
+  // başlarız. Kayıtlı dil localStorage'dan mount sonrası okunur; böylece
+  // prerender edilmiş HTML ile ilk client render birebir eşleşir ve React
+  // hidrasyon uyuşmazlığı oluşmaz.
+  const [lang, setLangState] = useState('tr')
+
+  useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY)
-      if (saved && CONTENT[saved]) return saved
+      if (saved && CONTENT[saved] && saved !== 'tr') setLangState(saved)
     } catch {
-      /* localStorage erişilemezse varsayılana düş */
+      /* localStorage erişilemezse varsayılanda kal */
     }
-    return 'tr'
-  })
+  }, [])
 
   // <html lang> ve <html dir> (Arapça için rtl) değerlerini senkronize et.
   useEffect(() => {

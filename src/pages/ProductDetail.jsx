@@ -9,6 +9,7 @@ import {
   CheckCircle2,
   MessageCircle,
   FileDown,
+  HelpCircle,
 } from 'lucide-react'
 import Seo from '../components/Seo'
 import { metaBySlug, SITE, waLink } from '../config'
@@ -21,6 +22,9 @@ export default function ProductDetail() {
   const d = c.productDetail
   const meta = metaBySlug(slug)
   const p = meta ? c.products.items[meta.id] : null
+  // Sayfaya özel SEO metinleri; tanımlı değilse ürün adına/özetine düşer.
+  const ps = meta ? c.pageSeo.products[meta.id] : null
+  const faq = (meta && c.pageSeo.faq[meta.id]) || []
 
   if (!meta || !p) {
     return (
@@ -40,30 +44,60 @@ export default function ProductDetail() {
 
   const documents = meta.hideAnalysis ? d.documentsShell : d.documents
 
-  // Not: Product/Offer schema'sı, Google'ın zorunlu tuttuğu `price` ve gerçek
-  // `review`/`aggregateRating` alanlarını gerektirir. Fiyatlandırma teklif
-  // usulü (herkese açık sabit fiyat yok) ve gerçek yorum bulunmadığından,
-  // sahte veri üretmeden geçerli kalan BreadcrumbList schema'sı kullanıyoruz.
-  // Böylece Search Console'daki "geçersiz Product" hataları ortadan kalkar.
-  const productJsonLd = {
-    '@context': 'https://schema.org',
+  const pageUrl = `${SITE.url}/urunler/${meta.slug}/`
+
+  // Product schema. `offers` bilinçli olarak yayınlanmıyor: fiyatlandırma teklif
+  // usulü olduğu için herkese açık bir `price` yok ve uydurma fiyat yazmak
+  // Search Console'da "geçersiz Product" hatası üretir. Teknik analiz değerleri
+  // additionalProperty olarak veriliyor; bunlar sayfada da görünür durumda.
+  const productNode = {
+    '@type': 'Product',
+    name: p.name,
+    description: p.summary,
+    url: pageUrl,
+    image: SITE.ogImage,
+    category: c.products.categories[meta.category]?.title,
+    countryOfOrigin: p.origin,
+    brand: { '@type': 'Brand', name: SITE.name },
+    ...(p.analysis && {
+      additionalProperty: p.analysis.map((a) => ({
+        '@type': 'PropertyValue',
+        name: a.label,
+        value: a.value,
+      })),
+    }),
+  }
+
+  const breadcrumbNode = {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: SITE.name, item: `${SITE.url}/` },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: p.name,
-        item: `${SITE.url}/urunler/${meta.slug}/`,
-      },
+      { '@type': 'ListItem', position: 2, name: p.name, item: pageUrl },
     ],
+  }
+
+  // FAQPage: yalnızca sayfada görünür olarak render edilen sorular yayınlanır.
+  const faqNode = faq.length
+    ? {
+        '@type': 'FAQPage',
+        mainEntity: faq.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: { '@type': 'Answer', text: item.a },
+        })),
+      }
+    : null
+
+  const productJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [productNode, breadcrumbNode, ...(faqNode ? [faqNode] : [])],
   }
 
   return (
     <article className="bg-white">
       <Seo
-        title={p.name}
-        description={p.summary}
+        title={ps?.title || p.name}
+        description={ps?.desc || p.summary}
         path={`/urunler/${meta.slug}`}
         jsonLd={productJsonLd}
       />
@@ -80,7 +114,7 @@ export default function ProductDetail() {
           <span className="mt-4 inline-block rounded-full bg-white/15 px-3 py-1 text-xs font-semibold">
             {p.tag}
           </span>
-          <h1 className="mt-3 text-3xl font-extrabold sm:text-4xl">{p.name}</h1>
+          <h1 className="mt-3 text-3xl font-extrabold sm:text-4xl">{ps?.h1 || p.name}</h1>
           <div className="mt-3 flex flex-wrap items-center gap-4 text-sm text-slate-200">
             <span className="inline-flex items-center gap-1.5">
               <MapPin size={15} /> {d.menseiLabel}: {p.origin}
@@ -157,6 +191,26 @@ export default function ProductDetail() {
                 ))}
               </ul>
             </section>
+
+            {/* S.S.S. — FAQPage JSON-LD ile birebir aynı metin */}
+            {faq.length > 0 && (
+              <section>
+                <h2 className="flex items-center gap-2 text-2xl font-extrabold text-navy-800">
+                  <HelpCircle size={24} className="text-brand-700" /> {d.faqTitle}
+                </h2>
+                <dl className="mt-5 space-y-4">
+                  {faq.map((item) => (
+                    <div
+                      key={item.q}
+                      className="rounded-xl border border-slate-200 bg-white p-5"
+                    >
+                      <dt className="text-base font-bold text-navy-800">{item.q}</dt>
+                      <dd className="mt-2 leading-relaxed text-slate-700">{item.a}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </section>
+            )}
           </div>
 
           {/* Yan panel: özet + CTA */}

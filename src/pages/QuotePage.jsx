@@ -123,7 +123,7 @@ export default function QuotePage() {
 
         <div className="mt-4 text-center">
           <span className="text-sm font-bold uppercase tracking-wider text-brand-700">{q.eyebrow}</span>
-          <h1 className="mt-2 text-3xl font-extrabold text-navy-800 sm:text-4xl">{q.title}</h1>
+          <h1 className="mt-2 text-3xl font-extrabold text-navy-800 sm:text-4xl">{c.seo.quote.h1 || q.title}</h1>
           <p className="mt-3 text-lg text-slate-600">
             {q.descLead}
             <strong className="text-navy-800">{q.minOrder}</strong>.

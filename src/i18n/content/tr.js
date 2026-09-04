@@ -1,3 +1,5 @@
+import BLOG_BODIES from './tr.blog-bodies.js'
+
 // Türkçe içerik sözlüğü — sitenin varsayılan dili ve diğer dillerin şablonu.
 const tr = {
   nav: {
@@ -12,8 +14,8 @@ const tr = {
 
   hero: {
     badge: 'Orta Asya Menşeli · Güvenilir Tedarik',
-    titleLead: "Orta Asya'nın En Kaliteli Yem Ham Maddeleri",
-    titleHighlight: "Doğu Anadolu'da!",
+    titleLead: "Orta Asya'dan İthal Kepek ve Yem Ham Maddeleri",
+    titleHighlight: "Doğu Anadolu'ya Toptan",
     desc: '%32 nişasta oranına sahip ithal buğday kepeği ve %22.80 proteinli pamuk yağı küspesi ile yem rasyonlarınızı güçlendirin. Doğrudan liman ve depo teslim seçenekleriyle.',
     ctaProducts: 'Güncel Stok & Ürünler',
     ctaWhatsapp: 'Hızlı Teklif / WhatsApp',
@@ -184,6 +186,7 @@ const tr = {
     rationCols: { buyukbas: 'Büyükbaş', kucukbas: 'Küçükbaş', kanatli: 'Kanatlı' },
     rationNote: 'Değerler tipik rasyon içi kullanım aralıklarıdır; nihai oran hayvanın ihtiyacına ve veteriner/zooteknist önerisine göre belirlenmelidir.',
     docsTitle: 'Sevkiyat Belgeleri',
+    faqTitle: 'Sıkça Sorulan Sorular',
     documents: [
       'Gümrük beyannamesi',
       'Fito-sağlık sertifikası',
@@ -807,13 +810,217 @@ const tr = {
 
   seo: {
     home: {
-      title: "Doğu Anadolu İthal Kepek, Pamuk Küspesi, ATK 36 & DDGS Tedariki",
-      desc: "Orta Asya'dan Doğu Anadolu'ya %32 nişastalı ithal buğday kepeği, %22.80 proteinli pamuk yağı küspesi, ATK 36 ve DDGS tedariki. Erzurum, Malatya, Elazığ, Iğdır'a liman ve depo teslim B2B yem ham maddesi.",
+      title: "İthal Kepek ve Yem Ham Maddesi Tedariki",
+      desc: "Orta Asya menşeli %32 nişastalı ithal kepek, %22,80 proteinli pamuk küspesi, ATK 36 ve DDGS. Doğu Anadolu'ya liman ve depo teslim toptan tedarik.",
     },
-    quote: { title: 'Teklif İste', desc: 'İthal buğday kepeği, pamuk yağı küspesi, ATK 36 ve DDGS için hızlı teklif talebi. Min. 1 TIR (~23 ton).' },
-    blogList: { title: 'Blog — Yem Ham Maddesi Rehberi', desc: 'İthal yem ham maddeleri, rasyon planlama ve Hopa lojistiği üzerine bilgi notları.' },
+    quote: {
+      h1: 'Toptan Yem Ham Maddesi Fiyat Teklifi',
+      title: 'Toptan Yem Ham Maddesi Teklif Formu',
+      desc: 'İthal buğday kepeği, pamuk yağı küspesi, ATK 36 ve DDGS için hızlı fiyat teklifi alın. Min. sipariş 1 TIR (~23 ton), liman ve depo teslim.',
+    },
+    blogList: {
+      h1: 'İthal Yem Ham Maddesi Rehberi',
+      title: 'İthal Yem Ham Maddesi Rehberi',
+      desc: 'İthal kepek, pamuk yağı küspesi, ATK 36 ve DDGS üzerine rehberler; rasyon planlama, kalite kontrol ve Hopa limanı lojistiği hakkında bilgi notları.',
+    },
     quoteSuccess: { title: 'Teklif Talebiniz Alındı', desc: 'Teklif talebiniz başarıyla iletildi.' },
   },
+  // Sayfa bazlı SEO metinleri (Adım 3 & 4).
+  // h1   : sayfada görünen TEK <h1>; konuyu ve hedef anahtar kelimeyi anlatır.
+  // title : <title> etiketi. Seo.jsx site adını ekler; toplam ~60 karakteri aşmaz.
+  // desc  : meta description; ~155 karakter sınırı içinde tutulur.
+  // Blog yazılarında desc verilmezse post.excerpt'e düşülür.
+  pageSeo: {
+    // Ürün sayfalarındaki S.S.S. bölümü. Metin sayfada GÖRÜNÜR şekilde render
+    // edilir ve aynı içerik FAQPage JSON-LD olarak yayınlanır (Google, schema'daki
+    // sorunun sayfada da görünmesini şart koşar).
+    faq: {
+      kepek: [
+        {
+          q: 'İthal buğday kepeğinin analiz değerleri nedir?',
+          a: 'Orta Asya menşeli ithal buğday kepeğimizde ortalama %15,5 ham protein, %32 nişasta, %12 nem, %4 ham yağ ve %10 ham selüloz ölçülmektedir. Her sevkiyata ait analiz raporu talep üzerine paylaşılır.',
+        },
+        {
+          q: 'Minimum sipariş miktarı ne kadar?',
+          a: 'Minimum sipariş miktarımız 1 TIR, yaklaşık 23 tondur. Daha yüksek tonajlarda liman veya gümrüklü depo teslim seçenekleriyle çalışıyoruz.',
+        },
+        {
+          q: 'Kepek rasyonda hangi oranda kullanılır?',
+          a: 'Tipik kullanım aralıkları büyükbaşta %15–25, küçükbaşta %10–20, kanatlıda %5–10 bandındadır. Nihai oran hayvanın ihtiyacına ve veteriner/zooteknist önerisine göre belirlenmelidir.',
+        },
+        {
+          q: 'Teslimat hangi illere yapılıyor?',
+          a: 'Erzurum, Malatya, Elazığ, Iğdır, Kars, Van, Ağrı, Bingöl, Muş, Erzincan, Kayseri, Tokat ve Diyarbakır başta olmak üzere Doğu Anadolu\'nun tamamına liman ve depo teslim sevkiyat yapıyoruz.',
+        },
+      ],
+      'pamuk-kuspesi': [
+        {
+          q: 'Pamuk yağı küspesinin protein oranı nedir?',
+          a: 'Ürünümüzde ortalama %22,80 ham protein, %10 nem, %6 ham yağ ve %20 ham selüloz ölçülmektedir. Analiz/kalite sertifikası her partiyle birlikte sunulur.',
+        },
+        {
+          q: 'Pamuk küspesi hangi rasyonlarda kullanılır?',
+          a: 'Ağırlıklı olarak besi ve süt hayvancılığı rasyonlarında protein kaynağı olarak kullanılır. Tipik oranlar büyükbaşta %10–20, küçükbaşta %8–15, kanatlıda %3–7\'dir.',
+        },
+        {
+          q: 'Pamuk küspesi mi ATK 36 mı tercih edilmeli?',
+          a: 'ATK 36 daha yüksek proteinlidir (%36); pamuk yağı küspesi ise %22,80 protein ve daha yüksek yağ içeriğiyle enerji-protein dengesi kurar. Seçim rasyonun protein açığına ve birim protein maliyetine göre yapılmalıdır.',
+        },
+        {
+          q: 'Sevkiyatla hangi belgeler veriliyor?',
+          a: 'Gümrük beyannamesi, fito-sağlık sertifikası, veteriner sağlık sertifikası, analiz/kalite sertifikası ve menşe şahadetnamesi sevkiyatla birlikte teslim edilir.',
+        },
+      ],
+      'atk-36': [
+        {
+          q: 'ATK 36 nedir?',
+          a: 'ATK 36, ayçiçeği tohumunun yağı alındıktan sonra geriye kalan, %36 ham protein içeren küspedir. Karma yem ve besi rasyonlarında dengeli protein takviyesi için kullanılır.',
+        },
+        {
+          q: 'ATK 36\'nın analiz değerleri nedir?',
+          a: 'Ortalama %36 ham protein, %10 nem, %1,5 ham yağ ve %22 ham selüloz ölçülmektedir. Yüksek selüloz oranı nedeniyle rasyondaki payı kontrollü artırılmalıdır.',
+        },
+        {
+          q: 'Rasyonda hangi oranda kullanılır?',
+          a: 'Tipik kullanım aralıkları büyükbaşta %8–15, küçükbaşta %5–12, kanatlıda %3–8 bandındadır. Kanatlı rasyonlarında selüloz sınırı nedeniyle oran düşük tutulur.',
+        },
+        {
+          q: 'Minimum sipariş ve teslimat koşulları neler?',
+          a: 'Minimum sipariş 1 TIR (~23 ton). Liman teslim veya gümrüklü depodan teslim seçenekleriyle Doğu Anadolu genelinde sevkiyat yapılmaktadır.',
+        },
+      ],
+      ddgs: [
+        {
+          q: 'DDGS nedir?',
+          a: 'DDGS (Kurutulmuş Damıtık Tahıl ve Çözünürleri), tahılın fermantasyonu sonrası kalan kısmın kurutulmasıyla elde edilen ithal yem ham maddesidir. Hem enerji hem protein kaynağı olarak kullanılır.',
+        },
+        {
+          q: 'DDGS\'in besin değerleri nedir?',
+          a: 'Ortalama %26–28 ham protein, %10 nem, %8 ham yağ ve %5 nişasta ölçülmektedir. Yüksek yağ içeriği rasyonun enerji yoğunluğunu artırır.',
+        },
+        {
+          q: 'DDGS rasyonda hangi oranda kullanılır?',
+          a: 'Tipik kullanım aralıkları büyükbaşta %10–20, küçükbaşta %5–12, kanatlıda %5–15 bandındadır. Yüksek verimli süt ve besi rasyonlarında tercih edilir.',
+        },
+        {
+          q: 'Ürün dökme mi çuvallı mı teslim ediliyor?',
+          a: 'Talebe göre dökme (silobas) veya çuvallı teslim seçenekleri sunulmaktadır. Büyük tonajlarda dökme teslim, çuvallama ve işçilik maliyeti nedeniyle daha ekonomiktir.',
+        },
+      ],
+      'findik-kabugu': [
+        {
+          q: 'Fındık kabuğu hangi amaçlarla kullanılır?',
+          a: 'Biyokütle yakıt, organik gübre ve hayvan altlığı uygulamalarında kullanılır. Doğal yöntemlerle kurutulmuş yerli bir yan üründür.',
+        },
+        {
+          q: 'Fındık kabuğu hayvan yemi olarak kullanılabilir mi?',
+          a: 'Hayır. Fındık kabuğu besin değeri taşıyan bir yem ham maddesi değildir; biyokütle, gübre ve altlık amaçlı tedarik edilir.',
+        },
+        {
+          q: 'Ne kadarlık partiler halinde tedarik ediliyor?',
+          a: 'Toplu tedarik esasıyla çalışıyoruz; miktar ve teslim noktasına göre fiyat teklifi hazırlanmaktadır.',
+        },
+        {
+          q: 'Hangi belgeler veriliyor?',
+          a: 'Analiz/kalite sertifikası ve sevk irsaliyesi teslimatla birlikte sunulur.',
+        },
+      ],
+      'nar-kabugu': [
+        {
+          q: 'Kurutulmuş nar kabuğu nerelerde kullanılır?',
+          a: 'Ekstrakt üretimi, bitkisel ürün ve yem katkı sektöründe ham madde olarak kullanılır. Doğal yöntemlerle kurutulmuş, yerli kaynaklı bir üründür.',
+        },
+        {
+          q: 'Ürün nasıl kurutuluyor?',
+          a: 'Kimyasal işlem uygulanmadan, doğal yöntemlerle kurutulur. Bu sayede ekstrakt ve katkı üretiminde aranan bileşen yapısı korunur.',
+        },
+        {
+          q: 'İstediğim miktarda tedarik edebilir miyim?',
+          a: 'Evet. İhtiyacınız olan miktara göre tedarik planlanır; miktar ve teslim noktasına göre fiyat teklifi hazırlanır.',
+        },
+        {
+          q: 'Hangi belgeler veriliyor?',
+          a: 'Analiz/kalite sertifikası ve sevk irsaliyesi teslimatla birlikte sunulur.',
+        },
+      ],
+    },
+    products: {
+      kepek: {
+        h1: 'İthal Buğday Kepeği — Toptan Hayvan Yemi Hammaddesi',
+        title: 'İthal Buğday Kepeği Toptan Satış',
+        desc: '%32 nişasta ve %15,5 ham protein değerli, Orta Asya menşeli ithal buğday kepeği. Yem fabrikaları ve besi işletmeleri için TIR bazlı toptan tedarik.',
+      },
+      'pamuk-kuspesi': {
+        h1: 'İthal Pamuk Yağı Küspesi — %22,80 Proteinli Yem Hammaddesi',
+        title: 'İthal Pamuk Yağı Küspesi Toptan',
+        desc: '%22,80 ham proteinli ithal pamuk yağı küspesi. Besi ve süt hayvancılığı rasyonlarında ekonomik protein kaynağı; Doğu Anadolu\'ya TIR bazlı tedarik.',
+      },
+      'atk-36': {
+        h1: 'ATK 36 Ayçiçeği Tohumu Küspesi — Toptan Yem Hammaddesi',
+        title: 'ATK 36 Ayçiçeği Tohumu Küspesi',
+        desc: '%36 ham proteinli ATK 36 ayçiçeği tohumu küspesi. Karma yem ve besi rasyonlarında dengeli protein takviyesi için ithal ham madde; TIR bazlı tedarik.',
+      },
+      ddgs: {
+        h1: 'DDGS — Kurutulmuş Damıtık Tahıl Küspesi, Toptan Tedarik',
+        title: 'DDGS Toptan Satış ve Analiz Değerleri',
+        desc: '%26–28 ham protein ve %8 ham yağ içeren ithal DDGS. Yüksek verimli süt ve besi rasyonları için enerji + protein kaynağı; TIR bazlı toptan tedarik.',
+      },
+      'findik-kabugu': {
+        h1: 'Fındık Kabuğu — Biyokütle ve Altlık İçin Toptan Tedarik',
+        title: 'Fındık Kabuğu Toptan Satış',
+        desc: 'Kurutulmuş yerli fındık kabuğu; biyokütle yakıt, organik gübre ve hayvan altlığı uygulamaları için toplu tedarik. Miktar bazlı fiyat teklifi.',
+      },
+      'nar-kabugu': {
+        h1: 'Kurutulmuş Nar Kabuğu — Ekstrakt ve Yem Katkı Ham Maddesi',
+        title: 'Kurutulmuş Nar Kabuğu Toptan',
+        desc: 'Doğal yöntemlerle kurutulmuş nar kabuğu; ekstrakt, bitkisel ürün ve yem katkı sektörü için ham madde. İstenen miktarda toplu tedarik.',
+      },
+    },
+    posts: {
+      'toptan-kepek-alim-rehberi': {
+        title: 'Toptan Kepek Alım Rehberi: Fiyat ve Kalite',
+        desc: 'Toptan kepek fiyatını belirleyen faktörler, kalite kriterleri, tedarikçi seçimi ve mevsimsel alım stratejileri. Yem fabrikaları ve besiciler için rehber.',
+      },
+      'suriyede-nohut-pazari': {
+        title: 'Suriye Nohut Pazarı: Fırsatlar ve Riskler',
+        desc: 'Suriye\'nin nohut ithalat ihtiyacı, Türkiye-Suriye ticaretinde normalleşme süreci ve Türk ihracatçıları için ortaya çıkan fırsatlar üzerine pazar analizi.',
+      },
+      'toptan-kepek-satis-rehberi': { title: 'Toptan Kepek Rehberi: Yem Fabrikaları' },
+      'toptan-kepek-yem-ham-maddesi-rehberi': {
+        title: 'Toptan Kepek ve Yem Ham Maddesi Tedariki',
+        desc: 'Toptan kepek, pamuk yağı küspesi, ATK 36 ve DDGS tedariki. Doğu Anadolu yem fabrikaları ve besi çiftlikleri için analiz belgeli ithal ham madde rehberi.',
+      },
+      'ithal-kepek-verimlilik-ekonomik-cozumler': { title: 'İthal Kepekle Verimlilik ve Maliyet' },
+      'ithal-kepek-nedir-hayvan-beslemede-onemi': { title: 'İthal Kepek Nedir? Beslemedeki Rolü' },
+      'dogru-kepek-tedarikcisi-secimi': { title: 'Doğru Kepek Tedarikçisi Nasıl Seçilir?' },
+      'dogu-anadolu-yem-sektoru': { title: 'Doğu Anadolu Yem Sektörü: Durum' },
+      'erzurum-kepek-fiyati-analizi': { title: 'Erzurum Kepek Fiyatı Analizi' },
+      'kalin-kepek-ince-kepek-farklari': { title: 'Kalın Kepek ve İnce Kepek Farkları' },
+      'ithal-kepek-besin-degerleri': { title: 'İthal Kepeğin Besin Değerleri' },
+      'hammadde-ithalat-kalite-kontrol': { title: 'Yem Hammaddesi İthalatı ve Kalite Kontrol' },
+      'yem-maliyetlerini-dusurme-stratejileri': { title: 'Yem Maliyetlerini Düşürme Stratejileri' },
+      'gelecegin-hayvanciligi-surdurulebilir-yem': { title: 'Sürdürülebilir Yem ve Hayvancılığın Geleceği' },
+      'yuksek-nisastali-ithal-kepek': { title: 'Yüksek Nişastalı İthal Kepek ve Verim' },
+      'ithal-bugday-kepegi-nedir': { title: 'İthal Buğday Kepeği Nedir?' },
+      'pamuk-yagi-kuspesi-nedir': { title: 'Pamuk Yağı Küspesi Nedir?' },
+      'kepek-nisasta-32': { title: 'Kepekte %32 Nişasta Ne Anlama Gelir?' },
+      'hopa-lojistik': { title: 'Hopa Limanı Üzerinden İthal Yem Lojistiği' },
+      'kuspe-vs-atk': { title: 'Pamuk Küspesi mi ATK 36 mı?' },
+    },
+  },
+}
+
+// Genişletilmiş gövdeleri ilgili yazılara uygula (bkz. tr.blog-bodies.js).
+// Okuma süresini de kelime sayısından yeniden hesaplıyoruz (~200 kelime/dk).
+for (const [slug, body] of Object.entries(BLOG_BODIES)) {
+  const post = tr.blog.posts[slug]
+  if (!post) {
+    console.warn(`[tr.blog-bodies] Eşleşmeyen slug: ${slug}`)
+    continue
+  }
+  post.body = body
+  const words = body.reduce((n, b) => n + b.text.split(/\s+/).length, 0)
+  post.readMin = Math.max(1, Math.round(words / 200))
 }
 
 export default tr

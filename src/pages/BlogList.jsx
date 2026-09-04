@@ -34,7 +34,7 @@ export default function BlogList() {
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <span className="text-sm font-bold uppercase tracking-wider text-brand-700">{b.eyebrow}</span>
-          <h1 className="mt-2 text-3xl font-extrabold text-navy-800 sm:text-4xl">{b.title}</h1>
+          <h1 className="mt-2 text-3xl font-extrabold text-navy-800 sm:text-4xl">{c.seo.blogList.h1 || b.title}</h1>
           <p className="mt-3 text-lg text-slate-600">{b.desc}</p>
         </div>
 

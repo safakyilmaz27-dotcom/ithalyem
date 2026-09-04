@@ -12,8 +12,8 @@ const en = {
 
   hero: {
     badge: 'Central Asian Origin · Reliable Supply',
-    titleLead: "Central Asia's Finest Feed Raw Materials",
-    titleHighlight: 'in Eastern Anatolia!',
+    titleLead: 'Imported Bran and Feed Raw Materials from Central Asia',
+    titleHighlight: 'to Eastern Anatolia',
     desc: 'Strengthen your feed rations with imported wheat bran at 32% starch and cottonseed meal at 22.80% protein. Direct port and warehouse delivery options available.',
     ctaProducts: 'Current Stock & Products',
     ctaWhatsapp: 'Quick Quote / WhatsApp',
@@ -184,6 +184,7 @@ const en = {
     rationCols: { buyukbas: 'Cattle', kucukbas: 'Sheep/Goat', kanatli: 'Poultry' },
     rationNote: 'Values are typical inclusion ranges within a ration; the final rate should be set according to the animal’s needs and the advice of a veterinarian/animal scientist.',
     docsTitle: 'Shipment Documents',
+    faqTitle: 'Frequently Asked Questions',
     documents: [
       'Customs declaration',
       'Phytosanitary certificate',
@@ -807,12 +808,198 @@ const en = {
 
   seo: {
     home: {
-      title: 'Imported Bran, Cottonseed Meal, SFM 36 & DDGS Supply for Eastern Anatolia',
-      desc: 'From Central Asia to Eastern Anatolia: 32%-starch imported wheat bran, 22.80%-protein cottonseed meal, SFM 36 and DDGS. B2B feed raw materials with port and warehouse delivery to Erzurum, Malatya, Elazığ and Iğdır.',
+      title: 'Imported Bran & Feed Raw Material Wholesale',
+      desc: 'Central Asian wheat bran at 32% starch, cottonseed meal at 22.80% protein, SFM 36 and DDGS. Wholesale supply to Eastern Anatolia, port or depot.',
     },
-    quote: { title: 'Request a Quote', desc: 'Quick quote request for imported wheat bran, cottonseed meal, SFM 36 and DDGS. Min. 1 truck (~23 tons).' },
-    blogList: { title: 'Blog — Feed Raw Material Guide', desc: 'Insights on imported feed raw materials, ration planning and Hopa logistics.' },
+    quote: {
+      h1: 'Request a Wholesale Feed Raw Material Quote',
+      title: 'Wholesale Feed Raw Material Quote',
+      desc: 'Get a fast price quote for imported wheat bran, cottonseed meal, SFM 36 and DDGS. Minimum order 1 truckload (~23 tonnes), port or depot delivery.',
+    },
+    blogList: {
+      h1: 'Imported Feed Raw Material Guide',
+      title: 'Imported Feed Raw Material Guide',
+      desc: 'Guides on imported bran, cottonseed meal, SFM 36 and DDGS — ration planning, quality control and logistics through the Port of Hopa.',
+    },
     quoteSuccess: { title: 'Your Quote Request Was Received', desc: 'Your quote request has been submitted successfully.' },
+  },
+  // Per-page SEO copy (see tr.js for the shared contract).
+  pageSeo: {
+    // Product-page FAQ. Rendered visibly on the page and published as FAQPage
+    // JSON-LD (Google requires the question text to be visible on the page).
+    faq: {
+      kepek: [
+        {
+          q: 'What are the analysis values of imported wheat bran?',
+          a: 'Our Central Asian imported wheat bran averages 15.5% crude protein, 32% starch, 12% moisture, 4% crude fat and 10% crude fibre. An analysis report is provided per shipment on request.',
+        },
+        {
+          q: 'What is the minimum order quantity?',
+          a: 'Our minimum order is one truckload, roughly 23 tonnes. Larger tonnages are supplied ex-port or from a bonded warehouse.',
+        },
+        {
+          q: 'At what inclusion rate is bran used in a ration?',
+          a: 'Typical inclusion is 15–25% for cattle, 10–20% for sheep and goats and 5–10% for poultry. The final rate should follow the animal\'s requirement and your vet or animal nutritionist.',
+        },
+        {
+          q: 'Which provinces do you deliver to?',
+          a: 'We ship across Eastern Anatolia — including Erzurum, Malatya, Elazığ, Iğdır, Kars, Van, Ağrı, Bingöl, Muş, Erzincan, Kayseri, Tokat and Diyarbakır — ex-port or from our warehouse.',
+        },
+      ],
+      'pamuk-kuspesi': [
+        {
+          q: 'What is the protein content of cottonseed meal?',
+          a: 'Our product averages 22.80% crude protein, 10% moisture, 6% crude fat and 20% crude fibre. An analysis/quality certificate accompanies every lot.',
+        },
+        {
+          q: 'Which rations use cottonseed meal?',
+          a: 'It is used mainly as a protein source in beef and dairy rations. Typical inclusion is 10–20% for cattle, 8–15% for sheep and goats and 3–7% for poultry.',
+        },
+        {
+          q: 'Cottonseed meal or SFM 36 — which should I choose?',
+          a: 'SFM 36 is higher in protein (36%), while cottonseed meal balances energy and protein at 22.80% protein with a higher fat content. Choose based on the ration\'s protein gap and the cost per unit of protein.',
+        },
+        {
+          q: 'Which documents come with the shipment?',
+          a: 'Customs declaration, phytosanitary certificate, veterinary health certificate, analysis/quality certificate and certificate of origin are delivered with the shipment.',
+        },
+      ],
+      'atk-36': [
+        {
+          q: 'What is SFM 36?',
+          a: 'SFM 36 is the meal remaining after oil extraction from sunflower seed, containing 36% crude protein. It is used for balanced protein supplementation in compound feed and beef rations.',
+        },
+        {
+          q: 'What are the analysis values of SFM 36?',
+          a: 'It averages 36% crude protein, 10% moisture, 1.5% crude fat and 22% crude fibre. Because of the high fibre content its share in the ration should be raised gradually.',
+        },
+        {
+          q: 'At what inclusion rate is it used?',
+          a: 'Typical inclusion is 8–15% for cattle, 5–12% for sheep and goats and 3–8% for poultry. Poultry rates stay low because of the fibre ceiling.',
+        },
+        {
+          q: 'What are the minimum order and delivery terms?',
+          a: 'Minimum order is one truckload (~23 tonnes), supplied ex-port or from a bonded warehouse, with delivery across Eastern Anatolia.',
+        },
+      ],
+      ddgs: [
+        {
+          q: 'What is DDGS?',
+          a: 'DDGS (Dried Distillers Grains with Solubles) is an imported feed raw material obtained by drying what remains after grain fermentation. It serves as both an energy and a protein source.',
+        },
+        {
+          q: 'What are the nutritional values of DDGS?',
+          a: 'It averages 26–28% crude protein, 10% moisture, 8% crude fat and 5% starch. The high fat content raises the energy density of the ration.',
+        },
+        {
+          q: 'At what inclusion rate is DDGS used?',
+          a: 'Typical inclusion is 10–20% for cattle, 5–12% for sheep and goats and 5–15% for poultry. It is favoured in high-yield dairy and beef rations.',
+        },
+        {
+          q: 'Is the product delivered in bulk or bagged?',
+          a: 'Both bulk (silo tanker) and bagged delivery are available. At larger tonnages bulk is more economical because it avoids bagging and handling costs.',
+        },
+      ],
+      'findik-kabugu': [
+        {
+          q: 'What is hazelnut shell used for?',
+          a: 'It is used as biomass fuel, organic fertilizer and animal bedding. It is a naturally dried domestic by-product.',
+        },
+        {
+          q: 'Can hazelnut shell be used as animal feed?',
+          a: 'No. Hazelnut shell is not a nutritionally valuable feed raw material; it is supplied for biomass, fertilizer and bedding purposes.',
+        },
+        {
+          q: 'What lot sizes are supplied?',
+          a: 'We work on a bulk supply basis; a price quote is prepared according to quantity and delivery point.',
+        },
+        {
+          q: 'Which documents are provided?',
+          a: 'An analysis/quality certificate and a delivery note are provided with the shipment.',
+        },
+      ],
+      'nar-kabugu': [
+        {
+          q: 'Where is dried pomegranate peel used?',
+          a: 'It is used as a raw material in extract production and in the botanical and feed-additive sectors. It is a naturally dried, domestically sourced product.',
+        },
+        {
+          q: 'How is the product dried?',
+          a: 'It is dried by natural methods with no chemical treatment, which preserves the compound profile sought in extract and additive production.',
+        },
+        {
+          q: 'Can I order the exact quantity I need?',
+          a: 'Yes. Supply is planned to your required quantity, and a quote is prepared based on quantity and delivery point.',
+        },
+        {
+          q: 'Which documents are provided?',
+          a: 'An analysis/quality certificate and a delivery note are provided with the shipment.',
+        },
+      ],
+    },
+    products: {
+      kepek: {
+        h1: 'Imported Wheat Bran — Wholesale Animal Feed Raw Material',
+        title: 'Imported Wheat Bran Wholesale',
+        desc: 'Central Asian imported wheat bran at 32% starch and 15.5% crude protein. Truckload wholesale supply for feed mills and fattening operations.',
+      },
+      'pamuk-kuspesi': {
+        h1: 'Imported Cottonseed Meal — 22.80% Protein Feed Raw Material',
+        title: 'Imported Cottonseed Meal Wholesale',
+        desc: 'Imported cottonseed meal at 22.80% crude protein. An economical protein source for dairy and beef rations; truckload supply to Eastern Anatolia.',
+      },
+      'atk-36': {
+        h1: 'SFM 36 Sunflower Seed Meal — Wholesale Feed Raw Material',
+        title: 'SFM 36 Sunflower Seed Meal Wholesale',
+        desc: 'SFM 36 sunflower seed meal at 36% crude protein. An imported raw material for balanced protein supplementation in compound feed and beef rations.',
+      },
+      ddgs: {
+        h1: 'DDGS — Dried Distillers Grains with Solubles, Wholesale Supply',
+        title: 'DDGS Wholesale Supply and Analysis',
+        desc: 'Imported DDGS at 26–28% crude protein and 8% crude fat. An energy and protein source for high-yield dairy and beef rations; truckload supply.',
+      },
+      'findik-kabugu': {
+        h1: 'Hazelnut Shell — Wholesale Supply for Biomass and Bedding',
+        title: 'Hazelnut Shell Wholesale Supply',
+        desc: 'Dried Turkish hazelnut shell for biomass fuel, organic fertilizer and animal bedding. Bulk supply with quantity-based price quotes.',
+      },
+      'nar-kabugu': {
+        h1: 'Dried Pomegranate Peel — Extract and Feed Additive Raw Material',
+        title: 'Dried Pomegranate Peel Wholesale',
+        desc: 'Naturally dried pomegranate peel for the extract, botanical and feed-additive sectors. Bulk supply in the quantity you need.',
+      },
+    },
+    posts: {
+      'toptan-kepek-alim-rehberi': {
+        title: 'Buying Wholesale Bran: Price & Quality Guide',
+        desc: 'The factors that set wholesale bran prices, quality criteria, supplier selection and seasonal buying strategies — a guide for feed mills and farmers.',
+      },
+      'suriyede-nohut-pazari': {
+        title: 'Syria Chickpea Market: Risks & Opportunities',
+        desc: 'A market analysis of Syria\'s chickpea import needs, the normalization of Turkey-Syria trade, and the opportunities emerging for Turkish exporters.',
+      },
+      'toptan-kepek-satis-rehberi': { title: 'Wholesale Bran Guide for Feed Mills' },
+      'toptan-kepek-yem-ham-maddesi-rehberi': {
+        title: 'Wholesale Bran & Feed Raw Material Supply',
+        desc: 'Supply of wholesale bran, cottonseed meal, SFM 36 and DDGS — lab-certified, directly imported feed raw materials for Eastern Anatolia operations.',
+      },
+      'ithal-kepek-verimlilik-ekonomik-cozumler': { title: 'Imported Bran: Productivity & Cost Savings' },
+      'ithal-kepek-nedir-hayvan-beslemede-onemi': { title: 'What Is Imported Bran in Animal Feed?' },
+      'dogru-kepek-tedarikcisi-secimi': { title: 'How to Choose the Right Bran Supplier' },
+      'dogu-anadolu-yem-sektoru': { title: 'Eastern Anatolia Feed Sector Outlook' },
+      'erzurum-kepek-fiyati-analizi': { title: 'Erzurum Bran Price Analysis' },
+      'kalin-kepek-ince-kepek-farklari': { title: 'Coarse vs Fine Bran: Key Differences' },
+      'ithal-kepek-besin-degerleri': { title: 'Nutritional Values of Imported Bran' },
+      'hammadde-ithalat-kalite-kontrol': { title: 'Feed Raw Material Import Quality Control' },
+      'yem-maliyetlerini-dusurme-stratejileri': { title: 'Strategies to Reduce Feed Costs' },
+      'gelecegin-hayvanciligi-surdurulebilir-yem': { title: 'Sustainable Feed & the Future of Livestock' },
+      'yuksek-nisastali-ithal-kepek': { title: 'High-Starch Imported Bran in Rations' },
+      'ithal-bugday-kepegi-nedir': { title: 'What Is Imported Wheat Bran?' },
+      'pamuk-yagi-kuspesi-nedir': { title: 'What Is Cottonseed Meal?' },
+      'kepek-nisasta-32': { title: 'What Does 32% Starch in Bran Mean?' },
+      'hopa-lojistik': { title: 'Imported Feed Logistics via Port of Hopa' },
+      'kuspe-vs-atk': { title: 'Cottonseed Meal vs SFM 36 for Rations' },
+    },
   },
 }
 

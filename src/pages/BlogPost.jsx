@@ -9,6 +9,8 @@ export default function BlogPost() {
   const { c, lang } = useLang()
   const b = c.blog
   const post = b.posts[slug]
+  // SERP için kısaltılmış başlık/açıklama; yoksa yazının kendi metinlerine düşer.
+  const ps = c.pageSeo.posts[slug]
   const locale = INTL_LOCALE[lang] || 'tr-TR'
 
   if (!post) {
@@ -49,7 +51,12 @@ export default function BlogPost() {
 
   return (
     <article className="bg-white">
-      <Seo title={post.title} description={post.excerpt} path={`/blog/${slug}`} jsonLd={articleJsonLd} />
+      <Seo
+        title={ps?.title || post.title}
+        description={ps?.desc || post.excerpt}
+        path={`/blog/${slug}`}
+        jsonLd={articleJsonLd}
+      />
 
       <header className="bg-gradient-to-br from-navy-800 to-brand-800 py-14 text-white sm:py-16">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">

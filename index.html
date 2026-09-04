@@ -6,36 +6,26 @@
     <meta name="google-site-verification" content="1X2S_tBSSXCUqiowyg7NMcoBVJhNfDbj3k6TJyIxgaE" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Primary SEO Meta -->
-    <title>İthalyem.com | Doğu Anadolu İthal Kepek, Pamuk Küspesi, ATK 36 & DDGS Tedariki</title>
-    <meta
-      name="description"
-      content="Orta Asya'dan Doğu Anadolu'ya %32 nişastalı ithal kepek, %22.80 proteinli pamuk yağı küspesi, ATK 36 ve DDGS tedariki. Erzurum, Malatya, Elazığ, Iğdır ve tüm Doğu Anadolu'ya doğrudan liman ve depo teslim B2B yem ham maddesi çözümleri."
-    />
-    <meta name="keywords" content="ithal kepek, %32 nişastalı kepek, pamuk yağı küspesi, %22.80 proteinli küspe, ATK 36, ayçiçeği tohumu küspesi, DDGS, yem ham maddesi, Doğu Anadolu yem, Erzurum yem fiyatları, toplu yem satışı, B2B yem tedariki" />
+    <!-- Site geneli sabit meta. Sayfaya özel başlık, description, canonical,
+         Open Graph, Twitter ve JSON-LD etiketleri React tarafında Seo.jsx
+         (react-helmet-async) ile üretilir ve build sırasında
+         scripts/prerender.mjs tarafından head yer tutucusuna yazılır. -->
     <meta name="author" content="İthalyem.com" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://ithalyem.com/" />
+    <meta name="theme-color" content="#0f3d2e" />
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="tr_TR" />
-    <meta property="og:site_name" content="İthalyem.com" />
-    <meta property="og:title" content="İthalyem.com | Orta Asya'dan Doğu Anadolu'ya Güvenilir Yem Ham Maddesi" />
+    <!-- Statik fallback: yalnızca dev sunucusu içindir. Build sırasında
+         scripts/prerender.mjs bu bloğu tamamen kaldırır ve yerine sayfaya özel
+         Helmet çıktısını koyar; böylece başlık etiketi tekrarlanmaz. -->
+    <!--fallback-seo-start-->
+    <title>İthalyem.com | Doğu Anadolu İthal Kepek, Pamuk Küspesi, ATK 36 & DDGS</title>
     <meta
-      property="og:description"
-      content="%32 nişastalı ithal kepek ve %22.80 proteinli pamuk yağı küspesi ile yem rasyonlarınızı güçlendirin. Doğrudan liman ve depo teslim seçenekleri."
+      name="description"
+      content="Orta Asya'dan Doğu Anadolu'ya %32 nişastalı ithal kepek, %22.80 proteinli pamuk yağı küspesi, ATK 36 ve DDGS tedariki. Liman ve depo teslim B2B yem ham maddesi."
     />
-    <meta property="og:url" content="https://ithalyem.com/" />
-    <meta property="og:image" content="https://ithalyem.com/og-cover.png" />
+    <!--fallback-seo-end-->
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="İthalyem.com | Orta Asya'dan Doğu Anadolu'ya Güvenilir Yem Ham Maddesi" />
-    <meta name="twitter:description" content="%32 nişastalı ithal kepek ve %22.80 proteinli pamuk yağı küspesi ile yem rasyonlarınızı güçlendirin." />
-    <meta name="twitter:image" content="https://ithalyem.com/og-cover.png" />
-
-    <!-- Structured Data: Organization -->
+    <!-- Structured Data: Organization (site geneli, her sayfada geçerli) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -52,10 +42,11 @@
           "@type": "ContactPoint",
           "telephone": "+90-545-133-28-59",
           "contactType": "sales",
-          "availableLanguage": "Turkish"
+          "availableLanguage": ["Turkish", "English", "Arabic"]
         }
       }
     </script>
+    <!--app-head-->
   </head>
   <body>
     <!-- GitHub Pages SPA: 404.html'ten gelen ?/ yolunu gerçek route'a geri yükle. -->
@@ -73,7 +64,7 @@
         }
       })(window.location)
     </script>
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
