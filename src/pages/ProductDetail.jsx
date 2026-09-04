@@ -46,28 +46,22 @@ export default function ProductDetail() {
 
   const pageUrl = `${SITE.url}/urunler/${meta.slug}/`
 
-  // Product schema. `offers` bilinçli olarak yayınlanmıyor: fiyatlandırma teklif
-  // usulü olduğu için herkese açık bir `price` yok ve uydurma fiyat yazmak
-  // Search Console'da "geçersiz Product" hatası üretir. Teknik analiz değerleri
-  // additionalProperty olarak veriliyor; bunlar sayfada da görünür durumda.
-  const productNode = {
-    '@type': 'Product',
-    name: p.name,
-    description: p.summary,
-    url: pageUrl,
-    image: SITE.ogImage,
-    category: c.products.categories[meta.category]?.title,
-    countryOfOrigin: p.origin,
-    brand: { '@type': 'Brand', name: SITE.name },
-    ...(p.analysis && {
-      additionalProperty: p.analysis.map((a) => ({
-        '@type': 'PropertyValue',
-        name: a.label,
-        value: a.value,
-      })),
-    }),
-  }
-
+  // Product schema'sı BİLİNÇLİ OLARAK yayınlanmıyor.
+  //
+  // Google, herhangi bir Product düğümünde "offers", "review" veya
+  // "aggregateRating" alanlarından en az birini ZORUNLU tutar; yoksa Search
+  // Console'da kritik hata verir. Search Console canlı testinde doğrulandı
+  // (4 Eyl 2026): «"offers", "review" veya "aggregateRating" belirtilmelidir».
+  //
+  // Fiyatlandırma teklif usulü olduğu için herkese açık sabit bir fiyat yok ve
+  // gerçek kullanıcı yorumu bulunmuyor. Bu alanları uydurmak hem hatayı
+  // çözmez hem de yapılandırılmış veri politikasını ihlal eder. Bu nedenle
+  // ürün bilgisi yalnızca görünür HTML'de (analiz tablosu, rasyon oranları,
+  // S.S.S.) sunuluyor; schema tarafında geçerli kalan BreadcrumbList ve
+  // FAQPage yayınlanıyor.
+  //
+  // Gerçek bir fiyat listesi yayınlanırsa Product + Offer(price, priceCurrency,
+  // availability) geri eklenebilir.
   const breadcrumbNode = {
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -90,7 +84,7 @@ export default function ProductDetail() {
 
   const productJsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [productNode, breadcrumbNode, ...(faqNode ? [faqNode] : [])],
+    '@graph': [breadcrumbNode, ...(faqNode ? [faqNode] : [])],
   }
 
   return (
