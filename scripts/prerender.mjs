@@ -22,7 +22,7 @@ const here = dirname(fileURLToPath(import.meta.url))
 const root = resolve(here, '..')
 const distDir = resolve(root, 'dist')
 
-const { SITE, PRODUCT_META, BLOG_SLUGS } = await import(
+const { SITE, PRODUCT_META, BLOG_SLUGS, REGION_META } = await import(
   pathToFileURL(resolve(root, 'src/config.js')).href
 )
 
@@ -31,6 +31,12 @@ const routes = [
   { path: '/', priority: '1.0', changefreq: 'weekly' },
   ...PRODUCT_META.map((p) => ({
     path: `/urunler/${p.slug}`,
+    priority: '0.9',
+    changefreq: 'weekly',
+  })),
+  { path: '/bolgeler', priority: '0.8', changefreq: 'monthly' },
+  ...REGION_META.map((r) => ({
+    path: `/bolgeler/${r.slug}`,
     priority: '0.9',
     changefreq: 'weekly',
   })),

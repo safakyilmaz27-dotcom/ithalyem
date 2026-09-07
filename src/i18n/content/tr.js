@@ -300,6 +300,115 @@ const tr = {
     back: 'Tüm Yazılar',
     minRead: 'dk okuma',
     posts: {
+      'bugday-kepegi-ton-fiyati-nasil-belirlenir': {
+        title: 'Buğday Kepeği Ton Fiyatı Nasıl Belirlenir?',
+        date: '2026-09-04',
+        readMin: 6,
+        excerpt: 'Dökme ve çuval buğday kepeği ton fiyatını belirleyen beş kalem: protein, ambalaj, miktar, nakliye ve kur. Doğu Anadolu\'ya teslim maliyeti nasıl hesaplanır?',
+        body: [
+          { type: 'p', text: 'Buğday kepeği alırken en sık sorulan soru şudur: "Ton fiyatı ne kadar?" Ancak kepeğin ton fiyatı sabit bir rakam değildir; günden güne ve teslim noktasına göre değişir. Bu yazıda, bir ton buğday kepeğinin maliyetini oluşturan kalemleri ve besici olarak fiyat karşılaştırırken nelere bakmanız gerektiğini açıklıyoruz.' },
+          { type: 'h2', text: 'Kısa cevap' },
+          { type: 'note', text: 'Buğday kepeğinin ton fiyatı; protein/enerji değeri, ambalaj (dökme mi çuval mı), alınan miktar, teslim mesafesi ve ithal üründe güncel kur–navlun kalemlerine göre belirlenir. Bu yüzden aynı gün bile farklı işletmeler farklı ton fiyatı görebilir. Doğru karşılaştırma, nakliye dahil, işletme kapısına teslim fiyat üzerinden yapılır.' },
+          { type: 'h2', text: 'Ton fiyatını belirleyen 5 kalem' },
+          { type: 'h3', text: '1. Protein ve enerji değeri' },
+          { type: 'p', text: 'Kepeğin besleyici değeri fiyatın temelidir. %15–16 proteinli ithal kepek, düşük proteinli yerli kepeğe göre kilogram başına daha fazla değer sunar. Sadece etiket fiyatına değil, birim protein/enerji başına maliyete bakın.' },
+          { type: 'h3', text: '2. Ambalaj: dökme mi, çuval mı?' },
+          { type: 'ul', items: [
+            'Dökme (ton): Çuval ve işçilik maliyeti olmadığı için en ekonomik seçenektir; silo veya depo kapasitesi olan büyük işletmeler için idealdir.',
+            'Çuval (40–50 kg): Taşıma ve stoklama kolaylığı sağlar ama ton başına dökmeden daha pahalıdır.',
+          ] },
+          { type: 'h3', text: '3. Miktar' },
+          { type: 'p', text: 'Tam kamyon (yaklaşık 25–27 ton) alımlarda birim fiyat, parça alımlara göre belirgin şekilde düşer. Birkaç işletme birleşip toplu alım yaparak da fiyat avantajı sağlayabilir.' },
+          { type: 'h3', text: '4. Nakliye ve teslim mesafesi' },
+          { type: 'p', text: 'Kepeğin çıkış deposu veya limanı ile işletmeniz arasındaki mesafe, ton fiyatına doğrudan eklenir. Doğu Anadolu için Hopa limanı, İç ve Batı Anadolu depolarına göre çoğu zaman daha kısa mesafe ve daha düşük nakliye demektir. Bu konuyu [Hopa limanı üzerinden ithal yem lojistiği](/blog/hopa-lojistik) yazımızda ayrıntılı ele aldık.' },
+          { type: 'h3', text: '5. Kur ve navlun (ithal üründe)' },
+          { type: 'p', text: 'İthal kepek, döviz kuru ve deniz navlunundan etkilenir. Kur hareketleri ton fiyatını kısa sürede değiştirebilir; bu yüzden fiyatlar "günlük" verilir.' },
+          { type: 'h2', text: 'Ton fiyatı karşılaştırırken yapılan 4 hata' },
+          { type: 'ul', items: [
+            'Sadece etiket fiyatına bakmak — nakliye hariç fiyat yanıltıcıdır.',
+            'Protein değerini görmezden gelmek — ucuz ama düşük değerli kepek gerçekte pahalıdır.',
+            'Nem oranını atlamak — yüksek nem, kuru madde başına maliyeti artırır.',
+            'Süreklilik maliyetini hesaplamamak — kesintili tedarik, rasyon değişimi ve verim kaybı doğurur.',
+          ] },
+          { type: 'h2', text: 'İthal buğday kepeğinde ton maliyetini nasıl hesaplıyoruz?' },
+          { type: 'p', text: 'İthalyem olarak fiyatı üç adımda netleştiriyoruz. Önce ihtiyacınızı alıyoruz: miktar, ambalaj ve teslim noktası. Ardından güncel liman ve kur durumuna göre nakliye dahil ton fiyatı çıkarıyoruz. Son olarak işletme kapınıza teslim planını paylaşıyoruz.' },
+          { type: 'p', text: 'Böylece "gizli" nakliye veya işçilik sürprizi olmadan, karşılaştırılabilir tek bir rakam görürsünüz. Ürünün analiz değerlerini ve teslim seçeneklerini [İthal Buğday Kepeği ürün sayfasından](/urunler/bugday-kepegi) inceleyebilirsiniz.' },
+        ],
+        faq: [
+          {
+            q: '1 ton buğday kepeği fiyatı ne kadar?',
+            a: 'Ton fiyatı; protein değeri, ambalaj, miktar, nakliye ve kura göre günlük değişir. Bu yüzden sabit rakam yerine teslim noktanıza özel güncel teklif vermek daha doğrudur.',
+          },
+          {
+            q: 'Dökme kepek mi, çuval kepek mi daha ucuz?',
+            a: 'Dökme kepek, çuval ve işçilik maliyeti içermediği için ton başına genellikle daha ekonomiktir. Silo veya depo imkânı olan işletmeler için dökme avantajlıdır.',
+          },
+          {
+            q: 'Hayvan yemi kepek fiyatı neden sürekli değişiyor?',
+            a: 'Kepek fiyatı; buğday piyasası, ithalat maliyetleri, döviz kuru ve mevsimsel arz-talebe bağlı olarak dalgalanır.',
+          },
+          {
+            q: "Doğu Anadolu'ya kepek nakliyesi fiyatı nasıl düşer?",
+            a: 'Tam kamyon (dökme) alım, Hopa limanına yakın teslim ve toplu sevkiyat, ton başına nakliyeyi düşüren başlıca yollardır.',
+          },
+        ],
+      },
+      'ithal-bugday-kepegi-mi-yerli-kepek-mi': {
+        title: 'İthal Buğday Kepeği mi, Yerli Kepek mi? Besici İçin Karşılaştırma',
+        date: '2026-09-04',
+        readMin: 6,
+        excerpt: 'Büyükbaş ve küçükbaş rasyonunda ithal buğday kepeği ile yerli kepek arasındaki farklar: protein, tutarlılık, maliyet ve tedarik. Doğu Anadolu besicisi için pratik karşılaştırma.',
+        body: [
+          { type: 'p', text: 'Buğday kepeği, Türkiye\'de büyükbaş ve küçükbaş besiciliğinin en yaygın yem hammaddelerinden biridir. Ancak "kepek" tek bir ürün değildir: ithal buğday kepeği ile yerli kepek arasında protein değeri, tutarlılık, fiyat ve tedarik kolaylığı açısından önemli farklar vardır. Bu yazıda, özellikle Doğu Anadolu\'daki besiciler için hangisinin ne zaman daha mantıklı olduğunu ele alıyoruz.' },
+          { type: 'h2', text: 'Kepek nedir, rasyonda ne işe yarar?' },
+          { type: 'p', text: 'Kepek, buğdayın una öğütülmesi sırasında ayrılan dış kabuk katmanıdır. Yüksek lif, orta düzey protein, B grubu vitaminleri ve mineral içerir. Rasyondaki başlıca işlevleri şunlardır:' },
+          { type: 'ul', items: [
+            'Ekonomik ve sindirilebilir enerji sağlar.',
+            'Lif dengesini kurarak işkembe sağlığını destekler.',
+            'Pahalı tahılların (mısır, arpa) bir kısmının yerini alarak yem maliyetini düşürür.',
+          ] },
+          { type: 'h2', text: 'İthal buğday kepeği ile yerli kepeğin farkları' },
+          { type: 'table', head: ['Kriter', 'İthal Buğday Kepeği', 'Yerli Kepek'], rows: [
+            ['Protein oranı', 'Genelde %15–16, daha yüksek', 'Değişken, çoğunlukla daha düşük'],
+            ['Tutarlılık', 'Parti bazında daha standart', 'Değirmene ve sezona göre değişken'],
+            ['Fiziksel form', 'Toz veya pelet', 'Genellikle toz'],
+            ['Tedarik', 'Liman ve depo, planlı sevkiyat', 'Yerel değirmen, bulunabilirliğe bağlı'],
+            ['Fiyat', 'Kur ve navlundan etkilenir', 'Yerel arza bağlı, dalgalı'],
+          ] },
+          { type: 'p', text: 'Özetle: İthal kepek, yüksek ve standart değer ile planlı, sürekli tedarik isteyen işletmeler için avantajlıdır. Yerli kepek, yerel arzın bol ve ucuz olduğu dönemlerde tercih edilebilir; ancak değer tutarsızlığı rasyon planlamasını zorlaştırabilir.' },
+          { type: 'h2', text: 'Doğu Anadolu besicisi için tedarik farkı' },
+          { type: 'p', text: 'Erzurum, Kars, Erzincan gibi illerde yerli kepek arzı mevsimsel dalgalanır ve fiyatlar hızla değişir. İthal kepekte ise Hopa limanı üzerinden gelen ürün Doğu Anadolu\'ya coğrafi olarak yakındır. Bu, İç veya Batı Anadolu depolarından mal çekmeye kıyasla nakliye maliyeti avantajı ve daha öngörülebilir bir tedarik demektir. Bölgesel tedarik koşullarını [Erzurum ithal buğday kepeği sayfamızda](/bolgeler/erzurum-ithal-bugday-kepegi) ayrıntılı anlattık.' },
+          { type: 'h2', text: 'Hangi durumda hangisi?' },
+          { type: 'ul', items: [
+            'Süt sığırcılığı veya yüksek verimli sürü: Standart protein önemlidir; ithal kepek genelde daha uygundur.',
+            'Besi dönemi, maliyet odaklı: Güncel fiyata göre karşılaştırın; ton başına teslim maliyetini hesaplayın.',
+            'Küçük işletme veya anlık ihtiyaç: Yerel yerli kepek pratik olabilir.',
+            'Yem fabrikası veya düzenli büyük hacim: İthal dökme kepek, tutarlılık ve planlı tedarik için mantıklıdır.',
+          ] },
+          { type: 'h2', text: 'Karar verirken bakılacak 4 sayı' },
+          { type: 'ul', items: [
+            'Ton başına teslim fiyatı (nakliye dahil).',
+            'Protein ve enerji değeri — düşük proteinli ucuz kepek gerçekte pahalı olabilir.',
+            'Nem oranı — yüksek nem, kuru madde başına maliyeti artırır.',
+            'Süreklilik — kesintili tedarik rasyon değişikliğine ve verim kaybına yol açar.',
+          ] },
+          { type: 'p', text: 'Ton fiyatını oluşturan kalemleri ayrıntılı görmek isterseniz [buğday kepeği ton fiyatı nasıl belirlenir](/blog/bugday-kepegi-ton-fiyati-nasil-belirlenir) yazımıza göz atabilirsiniz.' },
+        ],
+        faq: [
+          {
+            q: 'İthal buğday kepeğinin protein oranı kaçtır?',
+            a: 'İthal buğday kepeğinde ham protein genellikle %15–16 bandındadır ve partiler arasında yerli kepeğe göre daha tutarlıdır.',
+          },
+          {
+            q: 'İthal kepek her zaman daha mı pahalı?',
+            a: "Hayır. Ton başına teslim maliyeti kura, navluna ve yerel arza göre değişir. Bazı dönemlerde ithal kepek, nakliye avantajıyla Doğu Anadolu'da yerliye göre daha ekonomik olabilir.",
+          },
+          {
+            q: 'Büyükbaşta kepek nasıl kullanılır?',
+            a: 'Kepek, rasyonda enerji ve lif dengesini bozmadan belirli bir oranda kullanılır. Tipik aralık büyükbaşta %15–25\'tir; nihai oranı rasyon uzmanınızla birlikte belirlemenizi öneririz.',
+          },
+        ],
+      },
       'toptan-kepek-alim-rehberi': {
         title: 'Toptan Kepek Alımında Bilmeniz Gereken Her Şey: Fiyattan Kaliteye Kapsamlı Rehber',
         date: '2026-07-03',
@@ -785,7 +894,7 @@ const tr = {
     slogan: "Orta Asya'dan Türkiye'ye Güvenilir Yem Ham Maddesi Tedariki",
     productsTitle: 'Ürünler',
     corporateTitle: 'Kurumsal',
-    links: { whyUs: 'Neden İthal Yem?', logistics: 'Lojistik & Teslimat', quote: 'Teklif İste', blog: 'Blog' },
+    links: { whyUs: 'Neden İthal Yem?', logistics: 'Lojistik & Teslimat', quote: 'Teklif İste', blog: 'Blog', regions: 'Bölgeler' },
     contactTitle: 'İletişim',
     region: 'Doğu Anadolu Bölgesi, Türkiye',
     seo: 'İthalyem.com — Doğu Anadolu ithal kepek, %32 nişastalı kepek fiyatları, Erzurum pamuk yağı küspesi, %22.80 proteinli küspe tedariki, ATK 36 ve DDGS ithalatı alanında B2B ve toplu satış çözümleri sunar. Orta Asya menşeli yüksek analiz değerli yem ham maddeleri ile Erzurum, Malatya, Elazığ, Iğdır, Kars ve Van başta olmak üzere tüm Doğu Anadolu bölgesindeki yem fabrikaları, entegre tesisler ve büyük çiftliklere doğrudan liman ve depo teslim seçenekleriyle hizmet veriyoruz.',
@@ -798,7 +907,101 @@ const tr = {
       erzurum: 'Erzurum', malatya: 'Malatya', elazig: 'Elazığ', igdir: 'Iğdır',
       gaziantep: 'Gaziantep', mardin: 'Mardin', kars: 'Kars', van: 'Van', agri: 'Ağrı',
       bingol: 'Bingöl', mus: 'Muş', erzincan: 'Erzincan', kayseri: 'Kayseri',
-      tokat: 'Tokat', diyarbakir: 'Diyarbakır',
+      tokat: 'Tokat', diyarbakir: 'Diyarbakır', bayburt: 'Bayburt', ardahan: 'Ardahan',
+    },
+  },
+
+  // Bölge (şehir) sayfaları — /bolgeler/<slug>.
+  //
+  // Sekiz il için ayrı ayrı metin yazmak yerine tek bir şablondan üretiyoruz:
+  // build(), ile özgü değişkenleri (ad, ilçeler, komşu iller) alıp sayfanın
+  // H1'ini, meta metinlerini, gövde bloklarını ve S.S.S.'sini döndürür. Böylece
+  // yeni bir il eklemek config.js'e tek satır eklemekten ibaret olur.
+  regions: {
+    eyebrow: 'Bölgesel Tedarik',
+    breadcrumb: 'Bölgeler',
+    indexH1: 'İllere Göre İthal Buğday Kepeği Tedariki',
+    indexTitle: 'Bölgeler — İllere Göre İthal Buğday Kepeği',
+    indexDesc: "Erzurum, Kars, Erzincan, Ağrı, Iğdır, Muş, Bayburt ve Ardahan'a ithal buğday kepeği tedariki. İlinize teslim dökme ve çuval fiyatı için teklif alın.",
+    indexIntro: "Doğu Anadolu'nun sekiz ilinde, ithal buğday kepeğini doğrudan Hopa limanından ve depodan besicilere ulaştırıyoruz. Aşağıdan ilinizi seçin; teslim koşullarını, ambalaj seçeneklerini ve o ile özgü fiyat kalemlerini ilgili sayfada bulacaksınız.",
+    cardCta: 'Sayfayı aç',
+    quoteCta: 'Teklif İste',
+    faqTitle: 'Sıkça Sorulan Sorular',
+    otherCitiesTitle: 'Diğer iller',
+    ctaTitle: (city) => city + "'a ithal buğday kepeği teklifi alın",
+    ctaText: 'Doğrudan liman ve depo teslim, Doğu Anadolu\'ya hızlı sevkiyat. Miktar, ambalaj ve teslim noktanızı yazın; nakliye dahil ton fiyatını paylaşalım.',
+
+    build: ({ city, districts, neighborNames }) => {
+      const districtList = districts.join(', ')
+      const neighborList = neighborNames.join(', ')
+      return {
+        h1: city + ' İthal Buğday Kepeği Fiyatları ve Toptan Tedarik',
+        title: city + ' İthal Buğday Kepeği Fiyatları',
+        desc:
+          city +
+          ' ve ilçelerine ithal buğday kepeği tedariki. Dökme ve çuval, %15–16 protein, Hopa limanından hızlı teslim. Güncel ton fiyatı için teklif alın.',
+        excerpt:
+          city +
+          ' ve çevresindeki besi, süt ve yem işletmelerine dökme veya çuval ithal buğday kepeği; Hopa limanı üzerinden nakliye avantajlı teslim.',
+        body: [
+          { type: 'p', text: city + ' ve çevresindeki besicilere, süt ve besi sığırı işletmelerine ithal buğday kepeğini doğrudan limandan ve depodan tedarik ediyoruz. Ağırlıklı olarak büyükbaş ve küçükbaş rasyonlarında kullanılan bu yüksek lifli, ekonomik enerji kaynağını dökme (ton) veya çuval olarak, aracısız ve nakliye dahil çözümlerle ' + city + "'a ulaştırıyoruz." },
+          { type: 'p', text: "Karadeniz'deki Hopa limanına gelen ithal kepeği doğrudan Doğu Anadolu'ya yönlendirdiğimiz için, İç ve Batı Anadolu depolarından mal çeken tedarikçilere göre " + city + ' teslimde nakliye avantajı sağlıyoruz. Bu da işletmenizin ton başına maliyetini düşürür. Limanın bu roldeki yerini [Hopa limanı üzerinden ithal yem lojistiği](/blog/hopa-lojistik) yazımızda ayrıntılı anlattık.' },
+
+          { type: 'h2', text: city + "'da buğday kepeği fiyatı neye göre belirlenir?" },
+          { type: 'p', text: 'Kepeğin ' + city + ' teslim ton fiyatını belirleyen başlıca kalemler şunlardır:' },
+          { type: 'ul', items: [
+            'Protein ve enerji değeri: İthal kepekte ham protein genellikle %15–16 bandındadır; yerli kepeğe göre daha standart ve yüksektir.',
+            'Ambalaj: Dökme (çuvalsız, ton) teslimat, çuvallı teslimata göre ton başına daha ekonomiktir.',
+            'Miktar: Tam kamyon (yaklaşık 25–27 ton) alımlarda birim fiyat, parça alımlara göre düşer.',
+            'Teslim yeri: ' + city + ' merkez, ilçe (' + districtList + ') veya işletme kapısı teslim seçenekleri fiyata yansır.',
+            'Döviz ve liman maliyetleri: İthal ürün olduğu için güncel kur ve navlun fiyatı doğrudan etkiler.',
+          ] },
+          { type: 'note', text: 'Piyasada dökme buğday kepeği ton fiyatları geniş bir aralıkta seyreder ve günlük değişir. Bu yüzden sabit rakam yerine anlık teklif veriyoruz. Fiyatı oluşturan kalemlerin tamamını [buğday kepeği ton fiyatı nasıl belirlenir](/blog/bugday-kepegi-ton-fiyati-nasil-belirlenir) yazımızda açıkladık; ' + city + ' teslim güncel fiyat için [hemen teklif alın](/teklif).' },
+
+          { type: 'h2', text: city + "'a hangi ambalaj ve miktarlarda gönderiyoruz?" },
+          { type: 'table', head: ['Ürün', 'Ambalaj', 'Uygun işletme'], rows: [
+            ['İthal buğday kepeği', 'Dökme (ton)', 'Büyük besi ve süt çiftlikleri, yem fabrikaları'],
+            ['İthal buğday kepeği', '40–50 kg çuval', 'Orta ölçekli işletmeler, bayiler'],
+            ['İthal buğday kepeği', 'Palet / big-bag', 'Depolama ve stok yapan bayiler'],
+          ] },
+          { type: 'p', text: city + ' merkez veya ilçelerinde yem bayisi ya da kooperatifseniz, düzenli tedarik ve bayi fiyatı için ayrıca görüşüyoruz. Ürünün analiz değerlerini ve teslim seçeneklerini [İthal Buğday Kepeği ürün sayfasından](/urunler/bugday-kepegi) inceleyebilirsiniz.' },
+
+          { type: 'h2', text: 'Neden ' + city + ' besicisi için ithal buğday kepeği?' },
+          { type: 'p', text: city + ', kaba yem maliyetlerinin yüksek ve ahır döneminin uzun olduğu bir bölgede yer alır. Kışın uzun sürmesi, hayvanların tamamen yeme bağımlı olduğu süreyi uzatır ve toplam maliyet içindeki yem payını büyütür. İthal buğday kepeği bu tabloda rasyona şu katkıları sağlar:' },
+          { type: 'ul', items: [
+            'Ucuz ve sindirilebilir enerji sağlar.',
+            'Rasyonun lif dengesini düzenler; işkembe sağlığını ve sindirimi destekler.',
+            'Mısır ve arpa gibi pahalı tahılların bir kısmının yerini alarak yem maliyetini düşürür.',
+            'Süt ineklerinde iştahı ve yem tüketimini destekler.',
+          ] },
+          { type: 'p', text: 'İthal ve yerli kepeğin protein, tutarlılık ve tedarik açısından farkını [ithal buğday kepeği mi yerli kepek mi](/blog/ithal-bugday-kepegi-mi-yerli-kepek-mi) karşılaştırmamızda bulabilirsiniz.' },
+
+          { type: 'h2', text: city + ' ve çevresindeki teslim noktalarımız' },
+          { type: 'p', text: city + ' merkez ve ' + districtList + ' başta olmak üzere tüm ilçelere teslimat yapıyoruz. Aynı sevkiyat hattı üzerinde ' + neighborList + ' illerine de gönderim planlıyoruz; Doğu Anadolu genelinde tek kamyon veya toplu sevkiyat organize ediyoruz.' },
+        ],
+        faq: [
+          {
+            q: city + "'a kepek teslim süresi ne kadar?",
+            a: 'Hopa limanındaki stok durumuna göre, sipariş onayından sonra genellikle birkaç gün içinde ' + city + "'a teslim ediyoruz. Güncel teslim süresini teklif sırasında netleştiriyoruz.",
+          },
+          {
+            q: 'En az ne kadar kepek alabilirim?',
+            a: 'Hem tam kamyon (dökme ton) hem de çuvallı parça alımlara uygun çözümlerimiz var. İhtiyacınızı belirtin; size en uygun ambalaj ve miktarı önerelim.',
+          },
+          {
+            q: 'İthal kepek mi yerli kepek mi daha uygun?',
+            a: 'İthal kepek genellikle daha yüksek ve daha standart protein/enerji değeri sunar. Ton başına teslim maliyeti kura ve navluna göre değiştiği için, rasyonunuza göre hangisinin daha ekonomik olduğunu birlikte değerlendirebiliriz.',
+          },
+          {
+            q: 'Fatura ve analiz belgesi veriyor musunuz?',
+            a: 'Evet. Her sevkiyatı kurumsal fatura ve ürün analiz/besin değeri bilgisi ile teslim ediyoruz.',
+          },
+          {
+            q: city + ' ilçelerine de teslimat yapıyor musunuz?',
+            a: districtList + ' dahil ' + city + ' merkez ve tüm ilçelere işletme kapısı teslim seçeneğimiz var. İlçe teslimde nakliye mesafesi ton fiyatına yansır.',
+          },
+        ],
+      }
     },
   },
 
@@ -851,6 +1054,18 @@ const tr = {
         {
           q: 'Teslimat hangi illere yapılıyor?',
           a: 'Erzurum, Malatya, Elazığ, Iğdır, Kars, Van, Ağrı, Bingöl, Muş, Erzincan, Kayseri, Tokat ve Diyarbakır başta olmak üzere Doğu Anadolu\'nun tamamına liman ve depo teslim sevkiyat yapıyoruz.',
+        },
+        {
+          q: 'İthal buğday kepeği ile yerli kepek arasındaki fark nedir?',
+          a: 'İthal kepek genellikle daha yüksek ve daha standart protein/enerji değeri sunar; partiler arası tutarlılığı yüksektir. Yerli kepek bölgesel olarak daha kolay bulunsa da analiz değerleri değirmene ve sezona göre daha değişkendir.',
+        },
+        {
+          q: 'Buğday kepeği ton fiyatı nasıl belirleniyor?',
+          a: 'Ton fiyatı sabit değildir; protein/enerji değeri, ambalaj (dökme veya çuval), alınan miktar, teslim mesafesi ve ithal üründe güncel kur ile navlun kalemlerine göre günlük değişir. Bu yüzden teslim noktanıza özel, nakliye dahil güncel teklif veriyoruz.',
+        },
+        {
+          q: 'Dökme mi çuval mı tedarik ediyorsunuz?',
+          a: 'İkisini de tedarik ediyoruz. Silo veya depo kapasitesi olan yem fabrikaları ve büyük çiftlikler için dökme (ton) sevkiyat, orta ölçekli işletmeler ve bayiler için 40–50 kg çuval ile palet/big-bag seçeneklerimiz var.',
         },
       ],
       'pamuk-kuspesi': [
@@ -949,6 +1164,42 @@ const tr = {
         h1: 'İthal Buğday Kepeği — Toptan Hayvan Yemi Hammaddesi',
         title: 'İthal Buğday Kepeği Toptan Satış',
         desc: '%32 nişasta ve %15,5 ham protein değerli, Orta Asya menşeli ithal buğday kepeği. Yem fabrikaları ve besi işletmeleri için TIR bazlı toptan tedarik.',
+        // Ürün sayfası gövde metni. Analiz tablosunun üstünde, sayfanın ana
+        // metni olarak render edilir; H2 başlıkları ürünün ne olduğu, ne işe
+        // yaradığı ve fiyatının nasıl oluştuğu sorularını karşılar.
+        body: [
+          { type: 'p', text: 'İthal buğday kepeği; büyükbaş ve küçükbaş hayvan rasyonlarında kullanılan, yüksek lifli ve ekonomik bir enerji-protein kaynağıdır. Buğdayın una öğütülmesi sırasında ayrılan dış kabuk katmanından elde edilir; lif, protein, B grubu vitaminleri ve mineral bakımından zengindir.' },
+          { type: 'p', text: 'İthalyem olarak Orta Asya ve Karadeniz havzasından tedarik ettiğimiz standart kaliteli ithal buğday kepeğini, Hopa limanı üzerinden doğrudan Doğu Anadolu\'daki besicilere ve yem işletmelerine ulaştırıyoruz. Aracı deposu olmadan, limandan ve depodan doğrudan teslim ile ton başına maliyetinizi düşürüyoruz.' },
+
+          { type: 'h2', text: 'İthal buğday kepeği ne işe yarar?' },
+          { type: 'p', text: 'Rasyonda buğday kepeğinin başlıca faydaları şunlardır:' },
+          { type: 'ul', items: [
+            'Ekonomik enerji: Mısır ve arpaya göre daha uygun maliyetli, sindirilebilir enerji sağlar.',
+            'Lif dengesi: Yüksek lif içeriği işkembe sağlığını ve sindirimi destekler.',
+            'İştah ve yem tüketimi: Rasyonun lezzetini artırır, yem tüketimini teşvik eder.',
+            'Maliyet düşürme: Pahalı tahılların bir kısmının yerine geçerek yem maliyetini aşağı çeker.',
+          ] },
+          { type: 'p', text: 'Büyükbaş besi ve süt sığırcılığının yanı sıra koyun-keçi rasyonlarında ve yem fabrikalarının karma yem üretiminde ham madde olarak kullanılır. İthal ve yerli kepeğin farkını [ithal buğday kepeği mi yerli kepek mi](/blog/ithal-bugday-kepegi-mi-yerli-kepek-mi) karşılaştırmamızda ayrıntılı ele aldık.' },
+
+          { type: 'h2', text: 'İthal buğday kepeği ton fiyatı nasıl belirlenir?' },
+          { type: 'p', text: 'Buğday kepeğinin ton fiyatı sabit değildir; şu kalemlere göre günlük değişir:' },
+          { type: 'ul', items: [
+            'Protein ve enerji değeri — daha yüksek proteinli parti daha değerlidir.',
+            'Ambalaj — dökme teslimat, çuvallıdan ton başına daha ekonomiktir.',
+            'Miktar — tam kamyon alımı birim fiyatı düşürür.',
+            'Teslim mesafesi — nakliye doğrudan ton fiyatına eklenir.',
+            'Kur ve navlun — ithal ürün olduğu için döviz ve liman maliyetleri etkiler.',
+          ] },
+          { type: 'note', text: 'Bu yüzden site üzerinde sabit fiyat yerine, işletmenize ve teslim noktanıza özel nakliye dahil güncel teklif veriyoruz. Kalemlerin tamamını [buğday kepeği ton fiyatı nasıl belirlenir](/blog/bugday-kepegi-ton-fiyati-nasil-belirlenir) yazımızda açıkladık.' },
+
+          { type: 'h2', text: 'Ambalaj ve teslim seçenekleri' },
+          { type: 'table', head: ['Seçenek', 'Ayrıntı', 'Uygun işletme'], rows: [
+            ['Dökme (ton)', 'Silobas veya kamyon ile dökme sevkiyat', 'Yem fabrikaları, büyük besi ve süt çiftlikleri'],
+            ['Çuval (40–50 kg)', 'Çuvallı, elleçlemesi kolay teslim', 'Orta ölçekli işletmeler, bayiler'],
+            ['Palet / big-bag', 'Stok ve depolamaya uygun ambalaj', 'Bayiler ve kooperatifler'],
+          ] },
+          { type: 'p', text: 'Erzurum, Kars, Erzincan, Ağrı, Iğdır, Muş, Bayburt ve Ardahan başta olmak üzere tüm Doğu Anadolu\'ya sevkiyat yapıyoruz. İlinize özel teslim koşulları için [bölge sayfalarımıza](/bolgeler) göz atabilirsiniz.' },
+        ],
       },
       'pamuk-kuspesi': {
         h1: 'İthal Pamuk Yağı Küspesi — %22,80 Proteinli Yem Hammaddesi',
@@ -977,6 +1228,14 @@ const tr = {
       },
     },
     posts: {
+      'bugday-kepegi-ton-fiyati-nasil-belirlenir': {
+        title: 'Buğday Kepeği Ton Fiyatı Nasıl Belirlenir?',
+        desc: 'Buğday kepeği ton fiyatını belirleyen faktörler: protein, ambalaj, miktar, nakliye ve kur. Doğu Anadolu\'ya teslim maliyeti nasıl hesaplanır?',
+      },
+      'ithal-bugday-kepegi-mi-yerli-kepek-mi': {
+        title: 'İthal Buğday Kepeği mi, Yerli Kepek mi?',
+        desc: 'Büyükbaş ve küçükbaş rasyonunda ithal buğday kepeği ile yerli kepeğin farkı: protein, tutarlılık, maliyet ve tedarik. Besiciler için pratik karşılaştırma.',
+      },
       'toptan-kepek-alim-rehberi': {
         title: 'Toptan Kepek Alım Rehberi: Fiyat ve Kalite',
         desc: 'Toptan kepek fiyatını belirleyen faktörler, kalite kriterleri, tedarikçi seçimi ve mevsimsel alım stratejileri. Yem fabrikaları ve besiciler için rehber.',

@@ -8,6 +8,8 @@ import ProductDetail from './pages/ProductDetail'
 import QuotePage from './pages/QuotePage'
 import BlogList from './pages/BlogList'
 import BlogPost from './pages/BlogPost'
+import RegionList from './pages/RegionList'
+import RegionPage from './pages/RegionPage'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -20,6 +22,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/urunler/:slug" element={<ProductDetail />} />
           <Route path="/teklif" element={<QuotePage />} />
+          <Route path="/bolgeler" element={<RegionList />} />
+          <Route path="/bolgeler/:slug" element={<RegionPage />} />
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<NotFound />} />

@@ -42,12 +42,49 @@ export const SERVICE_CITY_KEYS = [
   'bingol', 'mus', 'erzincan', 'kayseri', 'tokat', 'diyarbakir',
 ]
 
+// Bölge (şehir) sayfaları: /bolgeler/<slug>.
+//
+// Her il ayrı bir URL ve ayrı bir arama niyeti demektir ("erzurum kepek
+// fiyatları", "kars ithal buğday kepeği" ...). Sayfa metni tek bir şablondan
+// üretilir (bkz. content.regions.build); burada yalnızca ile özgü değişkenler
+// tutulur: görünen ad, ilçeler ve iç bağlantı verilecek komşu iller.
+export const REGION_META = [
+  { id: 'erzurum', slug: 'erzurum-ithal-bugday-kepegi',
+    districts: ['Yakutiye', 'Palandöken', 'Aziziye', 'Horasan', 'Pasinler', 'Oltu'],
+    neighbors: ['kars', 'erzincan', 'agri', 'igdir', 'bayburt', 'mus', 'ardahan'] },
+  { id: 'kars', slug: 'kars-ithal-bugday-kepegi',
+    districts: ['Merkez', 'Sarıkamış', 'Selim', 'Kağızman', 'Digor', 'Arpaçay'],
+    neighbors: ['erzurum', 'ardahan', 'igdir', 'agri', 'erzincan'] },
+  { id: 'erzincan', slug: 'erzincan-ithal-bugday-kepegi',
+    districts: ['Merkez', 'Tercan', 'Üzümlü', 'Refahiye', 'Çayırlı', 'Kemah'],
+    neighbors: ['erzurum', 'bayburt', 'mus', 'kars'] },
+  { id: 'agri', slug: 'agri-ithal-bugday-kepegi',
+    districts: ['Merkez', 'Doğubayazıt', 'Patnos', 'Eleşkirt', 'Diyadin', 'Tutak'],
+    neighbors: ['igdir', 'kars', 'mus', 'erzurum'] },
+  { id: 'igdir', slug: 'igdir-ithal-bugday-kepegi',
+    districts: ['Merkez', 'Tuzluca', 'Aralık', 'Karakoyunlu'],
+    neighbors: ['kars', 'agri', 'ardahan', 'erzurum'] },
+  { id: 'mus', slug: 'mus-ithal-bugday-kepegi',
+    districts: ['Merkez', 'Bulanık', 'Malazgirt', 'Varto', 'Hasköy', 'Korkut'],
+    neighbors: ['agri', 'erzurum', 'erzincan', 'kars'] },
+  { id: 'bayburt', slug: 'bayburt-ithal-bugday-kepegi',
+    districts: ['Merkez', 'Demirözü', 'Aydıntepe'],
+    neighbors: ['erzurum', 'erzincan', 'kars', 'ardahan'] },
+  { id: 'ardahan', slug: 'ardahan-ithal-bugday-kepegi',
+    districts: ['Merkez', 'Göle', 'Çıldır', 'Hanak', 'Posof', 'Damal'],
+    neighbors: ['kars', 'erzurum', 'igdir', 'agri'] },
+]
+
+export const regionBySlug = (slug) => REGION_META.find((r) => r.slug === slug)
+
 export const metaBySlug = (slug) => PRODUCT_META.find((p) => p.slug === slug)
 export const metasByCategory = (categoryId) =>
   PRODUCT_META.filter((p) => p.category === categoryId)
 
 // Blog yazılarının gösterim sırası (içerik content.blog.posts[slug] altında).
 export const BLOG_SLUGS = [
+  'bugday-kepegi-ton-fiyati-nasil-belirlenir',
+  'ithal-bugday-kepegi-mi-yerli-kepek-mi',
   'toptan-kepek-alim-rehberi',
   'suriyede-nohut-pazari',
   'toptan-kepek-satis-rehberi',

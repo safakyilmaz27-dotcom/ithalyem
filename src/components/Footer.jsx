@@ -45,6 +45,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm">
               <li><Link to="/#avantajlar" className="transition hover:text-gold-400">{f.links.whyUs}</Link></li>
               <li><Link to="/#lojistik" className="transition hover:text-gold-400">{f.links.logistics}</Link></li>
+              <li><Link to="/bolgeler" className="transition hover:text-gold-400">{f.links.regions}</Link></li>
               <li><Link to="/blog" className="transition hover:text-gold-400">{f.links.blog}</Link></li>
               <li><Link to="/teklif" className="transition hover:text-gold-400">{f.links.quote}</Link></li>
               <li>

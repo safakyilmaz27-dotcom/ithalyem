@@ -298,6 +298,115 @@ const en = {
     back: 'All Posts',
     minRead: 'min read',
     posts: {
+      'bugday-kepegi-ton-fiyati-nasil-belirlenir': {
+        title: 'How Is the Ton Price of Wheat Bran Determined?',
+        date: '2026-09-04',
+        readMin: 6,
+        excerpt: 'The five components behind the ton price of bulk and bagged wheat bran: protein, packaging, volume, freight and exchange rate — and how delivered cost to Eastern Anatolia is calculated.',
+        body: [
+          { type: 'p', text: 'The most common question when buying wheat bran is simple: "What is the price per ton?" But the ton price of bran is not a fixed figure; it changes day by day and by delivery point. This article explains the cost components that make up one ton of wheat bran and what a livestock producer should look at when comparing prices.' },
+          { type: 'h2', text: 'Short answer' },
+          { type: 'note', text: 'The ton price of wheat bran is set by protein/energy value, packaging (bulk or bagged), the volume purchased, delivery distance and — for imported product — the current exchange rate and freight. That is why two farms can see different ton prices on the same day. A correct comparison is always made on the freight-included, delivered-to-farm price.' },
+          { type: 'h2', text: 'The five components of the ton price' },
+          { type: 'h3', text: '1. Protein and energy value' },
+          { type: 'p', text: 'Nutritional value is the basis of the price. Imported bran at 15–16% protein delivers more value per kilogram than low-protein local bran. Look not only at the sticker price but at the cost per unit of protein and energy.' },
+          { type: 'h3', text: '2. Packaging: bulk or bagged?' },
+          { type: 'ul', items: [
+            'Bulk (per ton): the most economical option because there is no bagging or handling cost; ideal for operations with silo or warehouse capacity.',
+            'Bags (40–50 kg): easier to move and store, but more expensive per ton than bulk.',
+          ] },
+          { type: 'h3', text: '3. Volume' },
+          { type: 'p', text: 'On full-truck purchases (roughly 25–27 tons) the unit price drops noticeably compared with part loads. Several operations can also combine into a joint purchase to gain the same advantage.' },
+          { type: 'h3', text: '4. Freight and delivery distance' },
+          { type: 'p', text: 'The distance between the origin warehouse or port and your operation is added directly to the ton price. For Eastern Anatolia, the port of Hopa usually means a shorter haul and lower freight than warehouses in Central or Western Anatolia. We covered this in detail in our article on [imported feed logistics via the port of Hopa](/blog/hopa-lojistik).' },
+          { type: 'h3', text: '5. Exchange rate and freight (for imported product)' },
+          { type: 'p', text: 'Imported bran is exposed to the exchange rate and to sea freight. Currency moves can change the ton price within a short time, which is why prices are quoted daily.' },
+          { type: 'h2', text: 'Four mistakes when comparing ton prices' },
+          { type: 'ul', items: [
+            'Looking only at the sticker price — a figure that excludes freight is misleading.',
+            'Ignoring protein value — cheap but low-value bran is expensive in reality.',
+            'Overlooking moisture — high moisture raises the cost per unit of dry matter.',
+            'Not costing continuity — interrupted supply forces ration changes and yield losses.',
+          ] },
+          { type: 'h2', text: 'How we calculate the ton cost of imported wheat bran' },
+          { type: 'p', text: 'At İthalyem we clarify the price in three steps. First we take your requirement: volume, packaging and delivery point. Then we produce a freight-included ton price based on current port and currency conditions. Finally we share the delivery plan to your gate.' },
+          { type: 'p', text: 'That way you see a single comparable figure, with no hidden freight or handling surprises. You can review the analysis values and delivery options on our [imported wheat bran product page](/urunler/bugday-kepegi).' },
+        ],
+        faq: [
+          {
+            q: 'How much does one ton of wheat bran cost?',
+            a: 'The ton price changes daily with protein value, packaging, volume, freight and the exchange rate. Rather than a fixed figure, it is more accurate to quote a current price for your specific delivery point.',
+          },
+          {
+            q: 'Is bulk bran or bagged bran cheaper?',
+            a: 'Bulk bran is generally more economical per ton because it carries no bagging or handling cost. Bulk is advantageous for operations with silo or warehouse capacity.',
+          },
+          {
+            q: 'Why do animal feed bran prices keep changing?',
+            a: 'Bran prices fluctuate with the wheat market, import costs, the exchange rate and seasonal supply and demand.',
+          },
+          {
+            q: 'How can freight cost to Eastern Anatolia be reduced?',
+            a: 'Full-truck bulk purchases, delivery close to the port of Hopa and consolidated shipments are the main ways to lower freight per ton.',
+          },
+        ],
+      },
+      'ithal-bugday-kepegi-mi-yerli-kepek-mi': {
+        title: 'Imported Wheat Bran or Local Bran? A Comparison for Producers',
+        date: '2026-09-04',
+        readMin: 6,
+        excerpt: 'Differences between imported wheat bran and local bran in cattle and sheep rations: protein, consistency, cost and supply. A practical comparison for Eastern Anatolian producers.',
+        body: [
+          { type: 'p', text: 'Wheat bran is one of the most widely used feed raw materials in Turkish cattle and sheep production. But "bran" is not a single product: imported wheat bran and local bran differ meaningfully in protein value, consistency, price and ease of supply. This article looks at when each makes more sense, particularly for producers in Eastern Anatolia.' },
+          { type: 'h2', text: 'What is bran and what does it do in a ration?' },
+          { type: 'p', text: 'Bran is the outer layer separated when wheat is milled into flour. It is high in fibre and contains moderate protein, B-group vitamins and minerals. Its main functions in a ration are:' },
+          { type: 'ul', items: [
+            'It provides economical, digestible energy.',
+            'It balances fibre, supporting rumen health.',
+            'It replaces part of more expensive grains (maize, barley), lowering feed cost.',
+          ] },
+          { type: 'h2', text: 'Differences between imported and local wheat bran' },
+          { type: 'table', head: ['Criterion', 'Imported Wheat Bran', 'Local Bran'], rows: [
+            ['Protein content', 'Usually 15–16%, higher', 'Variable, mostly lower'],
+            ['Consistency', 'More standard batch to batch', 'Varies by mill and season'],
+            ['Physical form', 'Meal or pellet', 'Usually meal'],
+            ['Supply', 'Port/warehouse, planned shipment', 'Local mill, subject to availability'],
+            ['Price', 'Affected by currency and freight', 'Depends on local supply, volatile'],
+          ] },
+          { type: 'note', text: 'In short: imported bran suits operations that need high, standard values and planned, continuous supply. Local bran can be preferred in periods when local supply is plentiful and cheap, although inconsistent values make ration planning harder.' },
+          { type: 'h2', text: 'The supply difference for Eastern Anatolian producers' },
+          { type: 'p', text: 'In provinces such as Erzurum, Kars and Erzincan, local bran supply fluctuates seasonally and prices move quickly. With imported bran, product arriving through the port of Hopa is geographically close to Eastern Anatolia. Compared with drawing goods from Central or Western Anatolian warehouses, that means a freight cost advantage and more predictable supply. We describe regional supply conditions in detail on our [Erzurum imported wheat bran page](/bolgeler/erzurum-ithal-bugday-kepegi).' },
+          { type: 'h2', text: 'Which one, and when?' },
+          { type: 'ul', items: [
+            'Dairy or high-yielding herds: standard protein matters, so imported bran is usually the better fit.',
+            'Fattening period, cost-driven: compare on current prices and calculate the delivered cost per ton.',
+            'Small operation or one-off need: local bran can be practical.',
+            'Feed mill or regular high volume: imported bulk bran makes sense for consistency and planned supply.',
+          ] },
+          { type: 'h2', text: 'Four numbers to check before deciding' },
+          { type: 'ul', items: [
+            'Delivered price per ton (freight included).',
+            'Protein and energy value — cheap low-protein bran can be expensive in practice.',
+            'Moisture — high moisture raises cost per unit of dry matter.',
+            'Continuity — interrupted supply forces ration changes and yield losses.',
+          ] },
+          { type: 'p', text: 'If you want to see the components of the ton price in detail, look at our article on [how the ton price of wheat bran is determined](/blog/bugday-kepegi-ton-fiyati-nasil-belirlenir).' },
+        ],
+        faq: [
+          {
+            q: 'What is the protein content of imported wheat bran?',
+            a: 'Crude protein in imported wheat bran is typically in the 15–16% band, and it is more consistent between batches than local bran.',
+          },
+          {
+            q: 'Is imported bran always more expensive?',
+            a: 'No. Delivered cost per ton varies with the exchange rate, freight and local supply. In some periods imported bran is more economical than local bran in Eastern Anatolia thanks to the freight advantage.',
+          },
+          {
+            q: 'How is bran used for cattle?',
+            a: 'Bran is used at a set proportion that does not upset the energy and fibre balance of the ration. A typical range for cattle is 15–25%; we recommend setting the final proportion with your ration specialist.',
+          },
+        ],
+      },
       'toptan-kepek-alim-rehberi': {
         title: 'Everything You Need to Know About Buying Wholesale Bran: A Complete Guide from Price to Quality',
         date: '2026-07-03',
@@ -783,7 +892,7 @@ const en = {
     slogan: 'Reliable Feed Raw Material Supply from Central Asia to Türkiye',
     productsTitle: 'Products',
     corporateTitle: 'Company',
-    links: { whyUs: 'Why Imported Feed?', logistics: 'Logistics & Delivery', quote: 'Request a Quote', blog: 'Blog' },
+    links: { whyUs: 'Why Imported Feed?', logistics: 'Logistics & Delivery', quote: 'Request a Quote', blog: 'Blog', regions: 'Regions' },
     contactTitle: 'Contact',
     region: 'Eastern Anatolia Region, Türkiye',
     seo: 'İthalyem.com provides B2B and bulk-sale solutions in imported bran for Eastern Anatolia, 32%-starch bran pricing, Erzurum cottonseed meal, 22.80%-protein meal supply, and SFM 36 and DDGS imports. With Central Asian origin, high-analysis feed raw materials, we serve feed mills, integrated facilities and large farms across all of Eastern Anatolia — especially Erzurum, Malatya, Elazığ, Iğdır, Kars and Van — with direct port and warehouse delivery options.',
@@ -796,7 +905,93 @@ const en = {
       erzurum: 'Erzurum', malatya: 'Malatya', elazig: 'Elazığ', igdir: 'Iğdır',
       gaziantep: 'Gaziantep', mardin: 'Mardin', kars: 'Kars', van: 'Van', agri: 'Ağrı',
       bingol: 'Bingöl', mus: 'Muş', erzincan: 'Erzincan', kayseri: 'Kayseri',
-      tokat: 'Tokat', diyarbakir: 'Diyarbakır',
+      tokat: 'Tokat', diyarbakir: 'Diyarbakır', bayburt: 'Bayburt', ardahan: 'Ardahan',
+    },
+  },
+
+  // Region (province) pages — /bolgeler/<slug>. See tr.js for the rationale:
+  // one template, eight provinces, one URL per search intent.
+  regions: {
+    eyebrow: 'Regional Supply',
+    breadcrumb: 'Regions',
+    indexH1: 'Imported Wheat Bran Supply by Province',
+    indexTitle: 'Regions — Imported Wheat Bran by Province',
+    indexDesc: 'Imported wheat bran supply to Erzurum, Kars, Erzincan, Ağrı, Iğdır, Muş, Bayburt and Ardahan. Request a quote for bulk or bagged delivery to your province.',
+    indexIntro: 'Across eight provinces of Eastern Anatolia we deliver imported wheat bran to producers directly from the port of Hopa and from our warehouse. Choose your province below; delivery terms, packaging options and the province-specific cost components are set out on each page.',
+    cardCta: 'Open page',
+    quoteCta: 'Request a Quote',
+    faqTitle: 'Frequently Asked Questions',
+    otherCitiesTitle: 'Other provinces',
+    ctaTitle: (city) => 'Get an imported wheat bran quote for ' + city,
+    ctaText: 'Direct port and warehouse delivery, fast shipment across Eastern Anatolia. Tell us your volume, packaging and delivery point and we will share a freight-included ton price.',
+
+    build: ({ city, districts, neighborNames }) => {
+      const districtList = districts.join(', ')
+      const neighborList = neighborNames.join(', ')
+      return {
+        h1: 'Imported Wheat Bran Prices and Wholesale Supply in ' + city,
+        title: 'Imported Wheat Bran Prices in ' + city,
+        desc: 'Imported wheat bran supply to ' + city + ' and its districts. Bulk and bagged, 15–16% protein, fast delivery via the port of Hopa. Request a current ton price.',
+        excerpt: 'Bulk or bagged imported wheat bran for fattening, dairy and feed operations in and around ' + city + ', delivered with a freight advantage via the port of Hopa.',
+        body: [
+          { type: 'p', text: 'We supply imported wheat bran directly from port and warehouse to fattening, dairy and beef cattle operations in and around ' + city + '. This high-fibre, economical energy source — used mainly in cattle and sheep rations — reaches ' + city + ' in bulk (per ton) or in bags, with no intermediary and with freight-included options.' },
+          { type: 'p', text: 'Because we route imported bran arriving at the Black Sea port of Hopa straight into Eastern Anatolia, we offer a freight advantage on deliveries to ' + city + ' compared with suppliers drawing goods from Central or Western Anatolian warehouses. That lowers your cost per ton. We explain the role of the port in our article on [imported feed logistics via the port of Hopa](/blog/hopa-lojistik).' },
+
+          { type: 'h2', text: 'What determines the wheat bran price in ' + city + '?' },
+          { type: 'p', text: 'The main components behind the ton price delivered to ' + city + ' are:' },
+          { type: 'ul', items: [
+            'Protein and energy value: crude protein in imported bran is usually in the 15–16% band, higher and more standard than local bran.',
+            'Packaging: bulk (unbagged, per ton) delivery is more economical per ton than bagged delivery.',
+            'Volume: on full-truck purchases (roughly 25–27 tons) the unit price falls compared with part loads.',
+            'Delivery point: ' + city + ' centre, districts (' + districtList + ') or delivery to your gate are all reflected in the price.',
+            'Currency and port costs: as an imported product, the current exchange rate and freight have a direct effect.',
+          ] },
+          { type: 'note', text: 'Bulk wheat bran ton prices move within a wide band and change daily, so we quote a live price rather than a fixed figure. We set out every component in our article on [how the ton price of wheat bran is determined](/blog/bugday-kepegi-ton-fiyati-nasil-belirlenir); for a current price delivered to ' + city + ', [request a quote](/teklif).' },
+
+          { type: 'h2', text: 'Packaging and volumes we ship to ' + city },
+          { type: 'table', head: ['Product', 'Packaging', 'Suitable operation'], rows: [
+            ['Imported wheat bran', 'Bulk (per ton)', 'Large fattening and dairy farms, feed mills'],
+            ['Imported wheat bran', '40–50 kg bags', 'Mid-sized operations, dealers'],
+            ['Imported wheat bran', 'Pallet / big bag', 'Dealers holding stock'],
+          ] },
+          { type: 'p', text: 'If you are a feed dealer or cooperative in ' + city + ' or its districts, we discuss regular supply and dealer pricing separately. You can review the analysis values on our [imported wheat bran product page](/urunler/bugday-kepegi).' },
+
+          { type: 'h2', text: 'Why imported wheat bran for producers in ' + city + '?' },
+          { type: 'p', text: city + ' lies in a region where roughage costs are high and the housing period is long. Long winters extend the time animals depend entirely on feed and increase the share of feed in total cost. In that picture, imported wheat bran contributes to the ration as follows:' },
+          { type: 'ul', items: [
+            'It provides cheap, digestible energy.',
+            'It balances ration fibre, supporting rumen health and digestion.',
+            'It replaces part of expensive grains such as maize and barley, lowering feed cost.',
+            'It supports appetite and feed intake in dairy cows.',
+          ] },
+          { type: 'p', text: 'You can find the difference between imported and local bran in protein, consistency and supply in our comparison: [imported wheat bran or local bran](/blog/ithal-bugday-kepegi-mi-yerli-kepek-mi).' },
+
+          { type: 'h2', text: 'Our delivery points in and around ' + city },
+          { type: 'p', text: 'We deliver to ' + city + ' centre and to all districts, notably ' + districtList + '. On the same shipping line we also plan deliveries to ' + neighborList + '; across Eastern Anatolia we organise single-truck or consolidated shipments.' },
+        ],
+        faq: [
+          {
+            q: 'How long does delivery to ' + city + ' take?',
+            a: 'Depending on stock at the port of Hopa, we usually deliver to ' + city + ' within a few days of order confirmation. We confirm the current lead time when quoting.',
+          },
+          {
+            q: 'What is the minimum quantity I can buy?',
+            a: 'We have options for both full-truck bulk loads and part loads in bags. Tell us your requirement and we will suggest the most suitable packaging and volume.',
+          },
+          {
+            q: 'Is imported or local bran the better choice?',
+            a: 'Imported bran generally offers a higher and more standard protein/energy value. Because delivered cost per ton varies with currency and freight, we can assess together which is more economical for your ration.',
+          },
+          {
+            q: 'Do you provide invoices and analysis certificates?',
+            a: 'Yes. Every shipment is delivered with a corporate invoice and product analysis/nutritional value information.',
+          },
+          {
+            q: 'Do you deliver to the districts of ' + city + ' as well?',
+            a: 'We offer delivery to your gate in ' + city + ' centre and all districts, including ' + districtList + '. On district deliveries the freight distance is reflected in the ton price.',
+          },
+        ],
+      }
     },
   },
 
@@ -844,6 +1039,18 @@ const en = {
         {
           q: 'Which provinces do you deliver to?',
           a: 'We ship across Eastern Anatolia — including Erzurum, Malatya, Elazığ, Iğdır, Kars, Van, Ağrı, Bingöl, Muş, Erzincan, Kayseri, Tokat and Diyarbakır — ex-port or from our warehouse.',
+        },
+        {
+          q: 'What is the difference between imported wheat bran and local bran?',
+          a: 'Imported bran generally offers a higher and more standard protein/energy value, with high consistency between batches. Local bran may be easier to find regionally, but its analysis values vary more by mill and season.',
+        },
+        {
+          q: 'How is the ton price of wheat bran determined?',
+          a: 'The ton price is not fixed; it changes daily with protein/energy value, packaging (bulk or bagged), volume purchased, delivery distance and — for imported product — the current exchange rate and freight. We therefore quote a current, freight-included price for your delivery point.',
+        },
+        {
+          q: 'Do you supply bulk or bagged product?',
+          a: 'Both. We offer bulk (per ton) shipment for feed mills and large farms with silo or warehouse capacity, and 40–50 kg bags plus pallet/big-bag options for mid-sized operations and dealers.',
         },
       ],
       'pamuk-kuspesi': [
@@ -942,6 +1149,40 @@ const en = {
         h1: 'Imported Wheat Bran — Wholesale Animal Feed Raw Material',
         title: 'Imported Wheat Bran Wholesale',
         desc: 'Central Asian imported wheat bran at 32% starch and 15.5% crude protein. Truckload wholesale supply for feed mills and fattening operations.',
+        // Product page body copy; rendered above the analysis table.
+        body: [
+          { type: 'p', text: 'Imported wheat bran is a high-fibre, economical source of energy and protein used in cattle and sheep rations. It is obtained from the outer layer separated when wheat is milled into flour, and is rich in fibre, protein, B-group vitamins and minerals.' },
+          { type: 'p', text: 'At İthalyem we deliver standard-quality imported wheat bran, sourced from Central Asia and the Black Sea basin, through the port of Hopa directly to producers and feed operations in Eastern Anatolia. With no intermediary warehouse — straight from port and depot — we lower your cost per ton.' },
+
+          { type: 'h2', text: 'What is imported wheat bran used for?' },
+          { type: 'p', text: 'The main benefits of wheat bran in a ration are:' },
+          { type: 'ul', items: [
+            'Economical energy: more affordable digestible energy than maize or barley.',
+            'Fibre balance: its high fibre content supports rumen health and digestion.',
+            'Appetite and intake: it improves ration palatability and encourages feed intake.',
+            'Cost reduction: it replaces part of more expensive grains, pulling feed cost down.',
+          ] },
+          { type: 'p', text: 'Beyond beef and dairy cattle it is used in sheep and goat rations and as a raw material in compound feed production. We compare imported and local bran in detail in [imported wheat bran or local bran](/blog/ithal-bugday-kepegi-mi-yerli-kepek-mi).' },
+
+          { type: 'h2', text: 'How is the ton price of imported wheat bran determined?' },
+          { type: 'p', text: 'The ton price of wheat bran is not fixed; it changes daily with these components:' },
+          { type: 'ul', items: [
+            'Protein and energy value — a higher-protein batch is worth more.',
+            'Packaging — bulk delivery is more economical per ton than bagged.',
+            'Volume — a full-truck purchase lowers the unit price.',
+            'Delivery distance — freight is added directly to the ton price.',
+            'Currency and freight — as an imported product, exchange rate and port costs matter.',
+          ] },
+          { type: 'note', text: 'That is why we quote a current, freight-included price specific to your operation and delivery point rather than publishing a fixed figure. We explain every component in [how the ton price of wheat bran is determined](/blog/bugday-kepegi-ton-fiyati-nasil-belirlenir).' },
+
+          { type: 'h2', text: 'Packaging and delivery options' },
+          { type: 'table', head: ['Option', 'Detail', 'Suitable operation'], rows: [
+            ['Bulk (per ton)', 'Bulk shipment by tanker or truck', 'Feed mills, large fattening and dairy farms'],
+            ['Bags (40–50 kg)', 'Bagged, easy to handle', 'Mid-sized operations, dealers'],
+            ['Pallet / big bag', 'Packaging suited to stock and storage', 'Dealers and cooperatives'],
+          ] },
+          { type: 'p', text: 'We ship across Eastern Anatolia, notably to Erzurum, Kars, Erzincan, Ağrı, Iğdır, Muş, Bayburt and Ardahan. For delivery terms specific to your province, see our [regional pages](/bolgeler).' },
+        ],
       },
       'pamuk-kuspesi': {
         h1: 'Imported Cottonseed Meal — 22.80% Protein Feed Raw Material',
@@ -970,6 +1211,14 @@ const en = {
       },
     },
     posts: {
+      'bugday-kepegi-ton-fiyati-nasil-belirlenir': {
+        title: 'How Is the Ton Price of Wheat Bran Set?',
+        desc: 'The factors behind the ton price of bulk and bagged wheat bran: protein, packaging, volume, freight and exchange rate — and how delivered cost is calculated.',
+      },
+      'ithal-bugday-kepegi-mi-yerli-kepek-mi': {
+        title: 'Imported Wheat Bran or Local Bran?',
+        desc: 'Imported versus local wheat bran in cattle and sheep rations: protein, consistency, cost and supply. A practical comparison for livestock producers.',
+      },
       'toptan-kepek-alim-rehberi': {
         title: 'Buying Wholesale Bran: Price & Quality Guide',
         desc: 'The factors that set wholesale bran prices, quality criteria, supplier selection and seasonal buying strategies — a guide for feed mills and farmers.',

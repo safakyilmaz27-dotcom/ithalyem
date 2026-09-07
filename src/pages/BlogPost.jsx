@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
-import { ArrowLeft, CalendarDays, Clock, Phone } from 'lucide-react'
+import { ArrowLeft, CalendarDays, Clock, Phone, HelpCircle } from 'lucide-react'
 import Seo from '../components/Seo'
+import RichText from '../components/RichText'
 import { INTL_LOCALE, SITE } from '../config'
 import { useLang } from '../i18n/LanguageContext'
 
@@ -31,8 +32,9 @@ export default function BlogPost() {
   const fmtDate = (iso) =>
     new Date(iso).toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' })
 
-  const articleJsonLd = {
-    '@context': 'https://schema.org',
+  const faq = post.faq || []
+
+  const postingNode = {
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.excerpt,
@@ -47,6 +49,27 @@ export default function BlogPost() {
       logo: { '@type': 'ImageObject', url: SITE.ogImage },
     },
     mainEntityOfPage: `${SITE.url}/blog/${slug}/`,
+  }
+
+  // FAQPage yalnızca sayfada GÖRÜNÜR şekilde render edilen sorular için
+  // yayınlanır; Google, schema'daki sorunun sayfada da bulunmasını şart koşuyor.
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      postingNode,
+      ...(faq.length
+        ? [
+            {
+              '@type': 'FAQPage',
+              mainEntity: faq.map((item) => ({
+                '@type': 'Question',
+                name: item.q,
+                acceptedAnswer: { '@type': 'Answer', text: item.a },
+              })),
+            },
+          ]
+        : []),
+    ],
   }
 
   return (
@@ -87,19 +110,23 @@ export default function BlogPost() {
       </header>
 
       <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="space-y-5">
-          {post.body.map((block, i) =>
-            block.type === 'h2' ? (
-              <h2 key={i} className="pt-4 text-2xl font-extrabold text-navy-800">
-                {block.text}
-              </h2>
-            ) : (
-              <p key={i} className="text-lg leading-relaxed text-slate-700">
-                {block.text}
-              </p>
-            )
-          )}
-        </div>
+        <RichText blocks={post.body} />
+
+        {faq.length > 0 && (
+          <section className="mt-12">
+            <h2 className="flex items-center gap-2 text-2xl font-extrabold text-navy-800">
+              <HelpCircle size={24} className="text-brand-700" /> {c.productDetail.faqTitle}
+            </h2>
+            <dl className="mt-5 space-y-4">
+              {faq.map((item) => (
+                <div key={item.q} className="rounded-xl border border-slate-200 bg-white p-5">
+                  <dt className="text-base font-bold text-navy-800">{item.q}</dt>
+                  <dd className="mt-2 leading-relaxed text-slate-700">{item.a}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        )}
 
         <div className="mt-12 rounded-2xl border border-brand-700/20 bg-brand-50 p-6 text-center">
           <p className="text-lg font-semibold text-navy-800">{c.contact.title}</p>

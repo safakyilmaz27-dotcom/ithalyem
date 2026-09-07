@@ -12,6 +12,7 @@ import {
   HelpCircle,
 } from 'lucide-react'
 import Seo from '../components/Seo'
+import RichText from '../components/RichText'
 import { metaBySlug, SITE, waLink } from '../config'
 import { useLang } from '../i18n/LanguageContext'
 
@@ -124,6 +125,10 @@ export default function ProductDetail() {
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-3">
           <div className="space-y-12 lg:col-span-2">
+            {/* Ürün tanıtım metni (H2'li gövde). Google'ın ilk yanıtta gördüğü
+                asıl içerik burasıdır; analiz tablosunun üstünde yer alır. */}
+            {ps?.body && <RichText blocks={ps.body} />}
+
             {/* Teknik analiz tablosu */}
             {!meta.hideAnalysis && p.analysis && (
               <section>
