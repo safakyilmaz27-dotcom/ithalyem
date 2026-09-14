@@ -83,6 +83,11 @@ export const metasByCategory = (categoryId) =>
 
 // Blog yazılarının gösterim sırası (içerik content.blog.posts[slug] altında).
 export const BLOG_SLUGS = [
+  'kis-besisine-hazirlik-yem-fiyat-dalgalanmasi-2026',
+  'bugday-kepegi-ton-fiyati-toptan-alim-rehberi',
+  'rasyonda-bugday-kepegi-orani-buyukbas',
+  'kars-ithal-bugday-kepegi-fiyatlari',
+  'erzincan-pamuk-kuspesi-fiyatlari-tedarik',
   'bugday-kepegi-ton-fiyati-nasil-belirlenir',
   'ithal-bugday-kepegi-mi-yerli-kepek-mi',
   'toptan-kepek-alim-rehberi',
